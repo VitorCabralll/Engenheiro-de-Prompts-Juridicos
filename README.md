@@ -1,4 +1,4 @@
-# Arquiteto de Prompts Jurídicos
+# Engenheiro de Prompts Jurídicos
 
 O Arquiteto de Prompts Jurídicos é um sistema especializado estruturado baseado em restrições, projetado para gerar, avaliar e refinar instruções de prompt para sistemas de IA no contexto jurídico. Ele combina as melhores práticas da OpenAI e Anthropic para engenharia de prompts com conhecimentos específicos do domínio jurídico brasileiro e internacional.
 
