@@ -18,22 +18,6 @@ O Arquiteto de Prompts Jurídicos **não é um chatbot ou assistente legal** —
 - **Especialização por Área**: Oferece prompts específicos para diferentes ramos do direito
 - **Redução de Risco**: Minimiza o risco de interpretações errôneas em contextos jurídicos
 
-## Estrutura de Arquivos
-
-```
-arquiteto-de-prompts-juridicos/
-├── prompt_sistema.txt              # Definição do comportamento do agente
-├── modulo_qa_juridico.txt          # Lógica de revisão de prompts jurídicos
-├── testes_injecao_prompts.txt      # Casos de teste e simulação de ataques
-├── templates_juridicos.txt         # Modelos de prompts jurídicos reutilizáveis
-├── biblioteca_por_area.txt         # Prompts categorizados por área do direito
-├── terminologia_juridica.txt       # Glossário e convenções terminológicas 
-├── documentos_legais.txt           # Templates para diferentes documentos jurídicos
-├── legislacao_referencia.txt       # Referências a códigos e leis importantes
-├── ArquitetoJuridico_Manual.pdf    # Manual completo do usuário
-└── README.md
-```
-
 ## Como Utilizar
 
 Você pode implantar este sistema em qualquer ambiente GPT (por exemplo, GPT-4 Personalizado) que permita:
