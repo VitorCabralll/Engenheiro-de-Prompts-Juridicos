@@ -13,8 +13,8 @@ O Arquiteto de Prompts Jurídicos **não é um chatbot ou assistente legal** —
 ## Por que usar o Arquiteto de Prompts Jurídicos?
 
 - **Precisão Terminológica**: Garante que todos os prompts utilizem corretamente a terminologia jurídica
-- **Conformidade Legal**: Baseado nas convenções e normas jurídicas nacionais e internacionais
-- **Atualização Constante**: Adaptável a mudanças na legislação e jurisprudência
+- **Conformidade Legal**: Em conformidade com a Resolução do CNJ Nº 615 de 11/03/2025
+- **Atualização Constante**: Adaptável a mudanças.
 - **Especialização por Área**: Oferece prompts específicos para diferentes ramos do direito
 - **Redução de Risco**: Minimiza o risco de interpretações errôneas em contextos jurídicos
 
