@@ -1,32 +1,50 @@
 # Engenheiro de Prompts Jurídicos
 
-O Arquiteto de Prompts Jurídicos é um sistema especializado estruturado baseado em restrições, projetado para gerar, avaliar e refinar instruções de prompt para sistemas de IA no contexto jurídico. Ele combina as melhores práticas da OpenAI e Anthropic para engenharia de prompts com conhecimentos específicos do domínio jurídico brasileiro e internacional.
+Um sistema especializado para geração, avaliação e refinamento de prompts de IA no contexto jurídico.
 
-O Arquiteto de Prompts Jurídicos **não é um chatbot ou assistente legal** — ele não fornece consultoria jurídica ou completa tarefas legais. Ele atua como um Orquestrador de Prompts Jurídicos que:
+![Licença MIT](https://img.shields.io/badge/Licença-MIT-blue.svg)
 
-⚖️ Gera sugestões de prompts jurídicos bem formatados (`#prompt`)  
-📜 Avalia clareza/estrutura e melhora prompts legais do usuário (`#qa`)  
-⚠️ Identifica riscos legais, ambiguidades e limitações (`#analise`)  
-📋 Organiza por área do direito e tipo de documento (`#categorias`)  
-🛠️ Recomenda otimizações seguindo terminologia e práticas jurídicas (`#melhores-praticas`)  
+## 📋 Visão Geral
 
-## Por que usar o Arquiteto de Prompts Jurídicos?
+O Engenheiro de Prompts Jurídicos é um sistema estruturado baseado em restrições, projetado para criar instruções de alta qualidade para sistemas de IA no contexto jurídico. Ele combina as melhores práticas de engenharia de prompts com conhecimentos específicos do domínio jurídico brasileiro e internacional.
 
-- **Precisão Terminológica**: Garante que todos os prompts utilizem corretamente a terminologia jurídica
-- **Conformidade Legal**: Em conformidade com a Resolução do CNJ Nº 615 de 11/03/2025
-- **Atualização Constante**: Adaptável a mudanças.
-- **Especialização por Área**: Oferece prompts específicos para diferentes ramos do direito
-- **Redução de Risco**: Minimiza o risco de interpretações errôneas em contextos jurídicos
+**Este sistema não é um chatbot ou assistente legal** — ele atua como um Orquestrador de Prompts Jurídicos que:
 
-## Como Utilizar
+- ⚖️ Gera sugestões de prompts jurídicos bem formatados (`#prompt`)
+- 📜 Avalia e melhora prompts legais do usuário (`#qa`)
+- ⚠️ Identifica riscos, ambiguidades e limitações (`#analise`)
+- 📋 Organiza por área do direito e tipo de documento (`#categorias`)
+- 🛠️ Recomenda otimizações seguindo práticas jurídicas (`#melhores-praticas`)
 
-Você pode implantar este sistema em qualquer ambiente GPT (por exemplo, GPT-4 Personalizado) que permita:
+## 💡 Por que usar o Engenheiro de Prompts Jurídicos?
+
+- **Precisão Terminológica**: Garante o uso correto da terminologia jurídica
+- **Conformidade Legal**: Compatível com a Resolução do CNJ Nº 615 de 11/03/2025
+- **Atualização Constante**: Adaptável a mudanças regulatórias
+- **Especialização por Área**: Prompts específicos para diferentes ramos do direito
+- **Redução de Risco**: Minimiza interpretações errôneas em contextos jurídicos
+
+## 🚀 Como Utilizar
+
+O sistema pode ser implantado em qualquer ambiente GPT compatível (por exemplo, GPT-4 Personalizado) que permita:
 
 1. Carregamento de instruções personalizadas
 2. Entrada de prompt do usuário
 3. Capacidade de resposta estruturada
 
-## Exemplos de Uso
+### Principais Comandos
+
+O sistema responde a tags específicas que ativam diferentes modos:
+
+- `#prompt` - Gera sugestões de prompt (modo padrão)
+- `#qa` - Revisa um prompt, encontra falhas e sugere melhorias
+- `#analise` - Analisa potenciais problemas de um prompt
+- `#categorias` - Organiza por área do direito
+- `#melhores-praticas` - Recomenda otimizações
+- `#learn` - Explica a estrutura de um prompt (modo educacional)
+- `#edge` - Gera prompts de teste para casos extremos
+
+## 📝 Exemplos de Uso
 
 ### Avaliar um Prompt Jurídico
 
@@ -52,33 +70,59 @@ Você pode implantar este sistema em qualquer ambiente GPT (por exemplo, GPT-4 P
 #categorias Preciso de prompts relacionados ao direito trabalhista para análise de acordos coletivos.
 ```
 
-## Recursos Especializados
+## 📚 Métodos de Análise Incluídos
 
-O Arquiteto de Prompts Jurídicos inclui recursos específicos para diferentes áreas do direito:
+O sistema suporta vários métodos estruturados de análise jurídica:
 
-- **Direito Civil**: Prompts para contratos, responsabilidade civil, direito de família
+- **FIRAC+**: Fatos, Issue (Problema Jurídico), Regra, Análise, Conclusão (expandido)
+- **Ementa CNJ**: Formato padronizado para resumo de decisões judiciais
+- **CASO+**: Estrutura para estudos de caso jurídicos detalhados
+- **SuperAnálise**: Método para análise profunda de artigos e textos jurídicos
+
+## 🔍 Recursos Especializados
+
+O Engenheiro de Prompts Jurídicos inclui recursos específicos para diferentes áreas do direito:
+
+- **Direito Civil**: Contratos, responsabilidade civil, direito de família
 - **Direito Penal**: Análise de tipos penais, defesas e procedimentos criminais
-- **Direito Trabalhista**: Modelos para reclamações, acordos e análise de legislação
-- **Direito Tributário**: Estruturas para consultas sobre tributação e planejamento fiscal
-- **Direito Administrativo**: Templates para processos administrativos e licitações
-- **Direito Digital**: Prompts especializados em LGPD, crimes cibernéticos e direito digital
+- **Direito Trabalhista**: Reclamações, acordos e análise de legislação
+- **Direito Tributário**: Consultas sobre tributação e planejamento fiscal
+- **Direito Administrativo**: Processos administrativos e licitações
+- **Direito Digital**: LGPD, crimes cibernéticos e direito digital
 
-## Benefícios para Profissionais Jurídicos
+## 🌟 Benefícios para Profissionais Jurídicos
 
-- **Economize Tempo**: Crie prompts eficientes para tarefas jurídicas repetitivas
-- **Maior Precisão**: Obtenha resultados mais precisos das IAs em contextos jurídicos
-- **Terminologia Correta**: Garanta o uso adequado da linguagem jurídica
-- **Redução de Erros**: Minimize interpretações equivocadas em assuntos legais
-- **Consistência**: Mantenha um padrão consistente nos documentos gerados
+- **Economia de Tempo**: Criação eficiente de prompts para tarefas repetitivas
+- **Maior Precisão**: Resultados mais exatos das IAs em contextos jurídicos
+- **Terminologia Correta**: Uso adequado da linguagem jurídica
+- **Redução de Erros**: Minimização de interpretações equivocadas
+- **Consistência**: Padrão uniforme nos documentos gerados
 
-## Créditos
+## 📂 Estrutura do Repositório
 
-Este projeto é baseado em recursos e guias disponíveis publicamente fornecidos pela OpenAI, combinados com conhecimentos especializados em direito e práticas jurídicas. Não constitui aconselhamento jurídico.
+- `LICENSE` - Licença MIT
+- `README.md` - Este arquivo
+- `Prompt Formatting Preferences` - Diretrizes de formatação
+- `Prompt Library` - Biblioteca de prompts pré-configurados
+- `Prompt Templates` - Templates para diversos casos de uso
+- `QA Module` - Módulo de garantia de qualidade
+- `Specialized Prompt Examples` - Exemplos de prompts especializados
+- `System Prompt` - Configuração do sistema
 
-## Contribuição
+## 👥 Contribuição
 
 Contribuições de profissionais do direito são especialmente bem-vindas! Por favor, leia as diretrizes de contribuição antes de enviar pull requests.
 
-## Licença
+## ⚖️ Licença
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
+
+## ⚠️ Aviso Legal
+
+Este sistema é uma ferramenta de produtividade para profissionais do direito e não substitui aconselhamento jurídico qualificado. Todas as saídas geradas devem ser revisadas por profissionais competentes antes do uso.
+
+---
+
+**Última atualização:** 29/04/2025
+
+© 2025 Vitor Cabral
