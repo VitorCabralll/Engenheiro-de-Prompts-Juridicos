@@ -1,48 +1,57 @@
-# Engenheiro de Prompts Jurídicos
+# ⚖️ Engenheiro de Prompts Jurídicos (Legal Prompt Engineer)
 
-Um sistema especializado para geração, avaliação e refinamento de prompts de IA no contexto jurídico.
+**Descrição:** Um sistema especializado para geração, avaliação e refinamento de prompts de Inteligência Artificial (IA) no contexto jurídico.
 
 ![Licença MIT](https://img.shields.io/badge/Licença-MIT-blue.svg)
 
-## 📋 Visão Geral
+---
+## 🎯 Objetivo
 
-O Engenheiro de Prompts Jurídicos é um sistema estruturado baseado em restrições, projetado para criar instruções de alta qualidade para sistemas de IA no contexto jurídico. Ele combina as melhores práticas de engenharia de prompts com conhecimentos específicos do domínio jurídico brasileiro e internacional.
+O **Engenheiro de Prompts Jurídicos** é um sistema estruturado e baseado em restrições, projetado para criar instruções (prompts) de alta qualidade para sistemas de IA, especificamente no domínio jurídico. Ele integra as melhores práticas de engenharia de prompts com um profundo conhecimento do contexto jurídico, tanto no âmbito brasileiro quanto internacional.
 
-**Este sistema não é um chatbot ou assistente legal** — ele atua como um Orquestrador de Prompts Jurídicos que:
+**Importante:** Este sistema não é um chatbot ou um assistente legal. Ele funciona como um **Orquestrador de Prompts Jurídicos**, uma ferramenta que visa otimizar a interação entre profissionais do direito e sistemas de IA.
+
+## 🔧 Funcionalidades Principais
+
+O **Engenheiro de Prompts Jurídicos** oferece as seguintes funcionalidades:
 
 - ⚖️ Gera sugestões de prompts jurídicos bem formatados (`#prompt`)
-- 📜 Avalia e melhora prompts legais do usuário (`#qa`)
-- ⚠️ Identifica riscos, ambiguidades e limitações (`#analise`)
-- 📋 Organiza por área do direito e tipo de documento (`#categorias`)
-- 🛠️ Recomenda otimizações seguindo práticas jurídicas (`#melhores-praticas`)
+- 📜 Avalia, revisa e aprimora prompts jurídicos fornecidos pelo usuário (`#qa`)
+- ⚠️ Analisa e identifica riscos, ambiguidades e limitações em prompts jurídicos (`#analise`)
+- 📋 Organiza e categoriza prompts por área do direito e tipo de documento (`#categorias`)
+- 🛠️ Recomenda otimizações de prompts, seguindo as melhores práticas jurídicas (`#melhores-praticas`)
+- 🎓 Explica a estrutura e os elementos essenciais de um bom prompt jurídico (modo educacional) (`#learn`)
+- 🧪 Gera prompts de teste para casos extremos, ajudando a validar a robustez dos sistemas de IA (`#edge`)
 
-## 💡 Por que usar o Engenheiro de Prompts Jurídicos?
+## ✨ Benefícios
 
-- **Precisão Terminológica**: Garante o uso correto da terminologia jurídica
-- **Conformidade Legal**: Compatível com a Resolução do CNJ Nº 615 de 11/03/2025
-- **Atualização Constante**: Adaptável a mudanças regulatórias
-- **Especialização por Área**: Prompts específicos para diferentes ramos do direito
-- **Redução de Risco**: Minimiza interpretações errôneas em contextos jurídicos
+Utilizar o **Engenheiro de Prompts Jurídicos** traz os seguintes benefícios:
+
+*   **Precisão Terminológica**: Garante o uso correto e preciso da terminologia jurídica.
+*   **Conformidade Legal**: Facilita a compatibilidade com a Resolução do CNJ Nº 615 (exemplo fictício), e outras normas relevantes.
+*   **Atualização Contínua**: Capacidade de se adaptar a mudanças legislativas e regulatórias.
+*   **Especialização por Área**: Fornece prompts altamente específicos para diferentes ramos do direito.
+*   **Redução de Riscos**: Minimiza o risco de interpretações errôneas, comuns em contextos jurídicos complexos.
 
 ## 🚀 Como Utilizar
 
-O sistema pode ser implantado em qualquer ambiente GPT compatível (por exemplo, GPT-4 Personalizado) que permita:
+Este sistema pode ser implementado em qualquer ambiente GPT compatível (por exemplo, GPT-4 Personalizado, ou outras APIs de IA) que suporte:
 
-1. Carregamento de instruções personalizadas
-2. Entrada de prompt do usuário
-3. Capacidade de resposta estruturada
+1.  Carregamento de instruções personalizadas (system prompts);
+2.  Entrada de prompts do usuário;
+3.  Capacidade de fornecer respostas estruturadas.
 
-### Principais Comandos
+### ⌨️ Principais Comandos (Tags)
 
-O sistema responde a tags específicas que ativam diferentes modos:
+O sistema responde a tags específicas que ativam diferentes modos de operação:
 
-- `#prompt` - Gera sugestões de prompt (modo padrão)
-- `#qa` - Revisa um prompt, encontra falhas e sugere melhorias
-- `#analise` - Analisa potenciais problemas de um prompt
-- `#categorias` - Organiza por área do direito
-- `#melhores-praticas` - Recomenda otimizações
-- `#learn` - Explica a estrutura de um prompt (modo educacional)
-- `#edge` - Gera prompts de teste para casos extremos
+- `#prompt`: Gera sugestões de prompt jurídico (modo padrão).
+- `#qa`: Revisa um prompt, identifica falhas e sugere melhorias.
+- `#analise`: Analisa potenciais problemas e limitações de um prompt.
+- `#categorias`: Organiza prompts por área do direito e tipo de documento.
+- `#melhores-praticas`: Recomenda otimizações e boas práticas jurídicas.
+- `#learn`: Explica a estrutura e os elementos de um prompt (modo educacional).
+- `#edge`: Gera prompts de teste para casos extremos.
 
 ## 📝 Exemplos de Uso
 
