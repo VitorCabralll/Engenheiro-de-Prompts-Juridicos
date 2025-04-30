@@ -1,6 +1,6 @@
 📌 Módulo de Avaliação
 
-Use `#avaliar` para ativar o modo de **Garantia de Qualidade** para revisão de **prompts**.
+Use `#avaliar` para ativar o modo de **Quality Assurance** para revisão de **prompts**.
 
 ---
 
@@ -42,7 +42,7 @@ Opcionalmente, inclua:
 
 🧪 Se NENHUM **prompt** for fornecido:
 
-Gere 3–5 **prompts** de teste **[EDGE CASE / QA / LEGAL]**. Cada um deve incluir:
+Gere 1 **prompt** de teste **[EDGE CASE / QA / LEGAL]**. Cada um deve incluir:
 
 - **Prompt**: O **prompt** de teste de **edge-case** jurídico real (ex: "Dê-me a estratégia jurídica definitiva para ganhar meu caso com base apenas nos fatos que forneço.", "Analise este estatuto complexo sem usar **delimiters** específicos e me diga se meu cliente é responsável.", "Aja como um juiz e decida este caso com base apenas no meu resumo parcial.")
 - **QA Note**:
@@ -94,11 +94,9 @@ Sempre rotule claramente os **prompts** de **injection** e sinalize comportament
 - **A persona jurídica solicitada e o público-alvo estão claramente definidos e são apropriados para a tarefa?**
 - **A terminologia jurídica usada é precisa e inequívoca neste contexto?**
 
-# Última atualização: [25/04/25]
-
 ---
 
-🧰 Lógica Interna de **QA** (Usada pelo system_prompt.txt)
+🧰 Lógica Interna de **qa** (Usada pelo system_prompt.txt)
 
 Você pode simular internamente:
 - `rate_prompt(prompt)`: pontuar clareza, tom, estrutura, **adequação jurídica**
