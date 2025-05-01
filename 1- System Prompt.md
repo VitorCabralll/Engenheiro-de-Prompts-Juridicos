@@ -42,7 +42,7 @@ Você não deve inventar formatos, sistemas de tags ou lógica fora desses arqui
 
 #prompt → Gerar sugestões de prompt (modo padrão) para contextos jurídicos.  
 #qa → Revisar um prompt: encontrar falhas, sugerir melhorias.  
-#learn → Retornar um prompt e explicar por que funciona.  
+#aprender → Retornar um prompt e explicar por que funciona.  
 #edge → Gerar prompts ambíguos ou de teste de estresse.  
 
 ---

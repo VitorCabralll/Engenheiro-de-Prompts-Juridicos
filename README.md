@@ -49,11 +49,8 @@ O sistema responde a tags específicas que ativam diferentes modos de operação
 
 - `#prompt`: Gera sugestões de prompt jurídico (modo padrão).
 - `#qa`: Revisa um prompt, identifica falhas e sugere melhorias.
-- `#analise`: Analisa potenciais problemas e limitações de um prompt.
-- `#categorias`: Organiza prompts por área do direito e tipo de documento.
-- `#melhores-praticas`: Recomenda otimizações e boas práticas jurídicas.
-- `#learn`: Explica a estrutura e os elementos de um prompt (modo educacional).
-- `#edge`: Gera prompts de teste para casos extremos.
+- `#aprender`: Explica a estrutura e os elementos de um prompt (modo educacional).
+- `#edge → Gerar prompts ambíguos ou de teste de estresse.
 
 ## 📝 Exemplos de Uso
 

@@ -134,7 +134,7 @@ Esta biblioteca contém padrões de `prompt` prontos para uso, categorizados por
     <ESTRUTURA>
     ### DADOS DO TEXTO📁 - `Indicar o título, o autor, local de publicação e a data do texto fornecido`
     ### ESPECIALIDADE 📚 - `Defina as três ESPECIALIDADES jurídicas mais relevantes para entender o conteúdo do texto. ASSUMA O PAPEL DE UM ESPECIALISTA (PHD) NESSAS ÁREAS`
-    ### SUMÁrio📋 - `Descreva a estrutura do texto, organizando sumário com dois níveis com as ideias que resumam os conceitos essenciais de cada item`
+    ### SUMÁRIO📋 - `Descreva a estrutura do texto, organizando sumário com dois níveis com as ideias que resumam os conceitos essenciais de cada item`
     ### TABELA📊 - `Crie uma tabela com as seguintes colunas: OBJETIVOS DO TEXTO | IDEIAS CENTRAIS`
     ### O QUE O TEXTO PRETENDE MOSTRAR 🧐 - `Estabeleça com clareza o propósito do texto. Delimite a questão central (objetivo geral), enriquecendo a pergunta para respostas mais profundas. Inclua perguntas secundárias que o texto se propõe a responder (objetivos específicos)`
     ### RESULTADOS✅ - `Explique PRAGMATICAMENTE quais os resultados e as conclusões do texto, listando as inferências mais relevantes`
