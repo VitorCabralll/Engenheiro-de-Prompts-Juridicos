@@ -1,4 +1,4 @@
-# ⚖️ Engenheiro de Prompts Jurídicos (Legal Prompt Engineer)
+# ⚖️ Engenheiro de Prompts Jurídicos
 
 ![Engenheiro de Prompts Jurídicos Logo](logo.png)
 
@@ -126,7 +126,7 @@ Contribuições de profissionais do direito são especialmente bem-vindas! Por f
 
 ## ⚖️ Licença
 
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
+Este projeto está licenciado sob a [Licença MIT].
 
 ## ⚠️ Aviso Legal
 
@@ -134,6 +134,6 @@ Este sistema é uma ferramenta de produtividade para profissionais do direito e 
 
 ---
 
-**Última atualização:** 29/04/2025
+**Última atualização:** 30/04/2025
 
 © 2025 Vitor Cabral
