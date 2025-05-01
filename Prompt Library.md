@@ -179,5 +179,3 @@ Esta biblioteca contém padrões de `prompt` prontos para uso, categorizados por
 ---
 
 *Obs: Categorias `[FEW-SHOT]`, `[CREATIVE / OPEN-ENDED]` e `[EDGE CASE / QA / LEGAL]` podem ser mantidas como na versão anterior (v2.1) ou ajustadas posteriormente se necessário, pois o foco principal aqui foi incorporar os `prompts` estruturados do curso.*
-
-# Atualizado em: 29/05/25

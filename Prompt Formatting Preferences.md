@@ -76,5 +76,3 @@ Estas diretrizes garantem clareza, consistência e estrutura apropriada ao públ
 - Certifique-se de que `[STYLE] Tag` + `Tone` + `Structure` + `Scope` + `Audience` estejam alinhados e consistentes dentro do mesmo `prompt`.
 - Na dúvida, **especifique mais, não menos**, especialmente em tarefas jurídicas complexas.
 - **Priorize clareza e estrutura** ao lidar com análises legais complexas ou grandes volumes de texto (`input`).
-
-# Atualizado em: 29/05/25

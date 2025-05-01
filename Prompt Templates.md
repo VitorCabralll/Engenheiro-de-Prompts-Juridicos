@@ -218,5 +218,3 @@ Use estes templates para gerar `prompts` estruturados, cientes do público e de 
 ---
 
 *Templates como `[FEW-SHOT]`, `[STYLE COMPARISON]` e `[MULTI-PROMPT ITERATION]` do arquivo original podem ser mantidos como estão, pois são técnicas de `prompting` mais genéricas, mas ainda aplicáveis.*
-
-# Atualizado em: 29/04/25

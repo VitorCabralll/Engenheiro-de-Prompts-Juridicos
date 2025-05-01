@@ -152,5 +152,3 @@ Esta coleção inclui exemplos de `prompts` jurídicos mais elaborados ou que co
 - Estes são exemplos de `prompts` mais elaborados. A complexidade deve ser ajustada à capacidade do `LLM` utilizado.
 - A revisão humana por um profissional qualificado é **essencial** para qualquer `output` gerado a partir destes `prompts`, especialmente aqueles que envolvem estratégia (`creative`) ou redação de cláusulas.
 - Os `prompts` demonstram a aplicação das `Formatting Preferences` (uso de `delimiters`, clareza, estrutura, `personas`).
-
-# Atualizado em: 29/04/25

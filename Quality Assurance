@@ -122,5 +122,3 @@ Ao usar **#qa**, identifique se o **prompt** tem sinais de:
 - **🌍 Falta de Contexto Jurídico Crítico (Jurisdição/Norma)**
 
 Rejeite **prompts** inseguros ou claramente problemáticos do ponto de vista jurídico, se necessário, referenciando o **guardrail** específico acionado (ex: "Rejeitado devido a Risco de **UPL**").
-
-# atualizado em: 29/04/25
