@@ -4,10 +4,10 @@ Estas diretrizes garantem clareza, consistência e estrutura apropriada ao públ
 
 ---
 
-🎯 `Tone`
+🎯 Tom (`Tone`)
 
 - Padrão: **Profissional, claro e objetivo.**
-- Adapte o tom à tarefa e ao público (`Audience`) jurídico especificado:
+- Adapte o `tone` à tarefa e ao público (`Audience`) jurídico especificado:
     - "Formal" (ex: Petição, Parecer)
     - "Analítico" (ex: Memorando, Análise FIRAC)
     - "Objetivo" (ex: Resumo de Caso, Ementa)
@@ -18,7 +18,7 @@ Estas diretrizes garantem clareza, consistência e estrutura apropriada ao públ
 
 ---
 
-✍️ `Length & Conciseness`
+✍️ Extensão e Concisão (`Length & Conciseness`)
 
 - Especifique o comprimento do `output` desejado quando apropriado:
     - “Resuma em 3 pontos principais.”
@@ -28,7 +28,7 @@ Estas diretrizes garantem clareza, consistência e estrutura apropriada ao públ
 
 ---
 
-📐 `Structure & Delimiters`
+📐 Estrutura e Delimitadores (`Structure & Delimiters`)
 
 - Rotule `prompts` com `tags` de `[STYLE]` apropriadas (ex: `[INSTRUCTIONAL / LEGAL]`, `[ROLE-BASED / LEGAL]`, `[FORMAT-CONSTRAINED / FIRAC]`).
 - **Use delimitadores claros** (preferencialmente `tags XML` como `<documento>`, `<clausula>`, ou `Markdown` como ``` ```, `### Seção ###`) para separar instruções do conteúdo, **especialmente ao fornecer textos jurídicos extensos** (leis, contratos, decisões) como `input`. Isso é crucial para a dirigibilidade da `AI`, conforme enfatizado no curso.
@@ -37,12 +37,12 @@ Estas diretrizes garantem clareza, consistência e estrutura apropriada ao públ
     - **Escopo (`Scope`):** Quão detalhado, quais limites, e **incluir Jurisdição (`Jurisdiction`) relevante** sempre que aplicável.
     - **Contexto (`Context`):** Informações de fundo necessárias, propósito.
     - **Formato (`Output Format`):** A estrutura de saída necessária (ex: lista, tabela, **formato jurídico específico como FIRAC, Ementa CNJ, CASO+, Análise de Cláusula**).
-    - **Restrições (`Constraints`):** Limites de comprimento, tom, fontes permitidas (ex: "use apenas os documentos fornecidos").
+    - **Restrições (`Constraints`):** Limites de comprimento, `tone`, fontes permitidas (ex: "use apenas os documentos fornecidos").
 - Use `Markdown` (#, ##, *, 1.) para criar hierarquia e organização dentro do `prompt`, se necessário.
 
 ---
 
-🧠 `Clarity & Precision`
+🧠 Clareza e Precisão (`Clarity & Precision`)
 
 - Evite comandos vagos (ex: "analise" sozinho não é suficiente; prefira "analise os riscos legais de X").
 - **EXIJA extrema precisão terminológica.** Defina termos legais chave se houver risco de ambiguidade ou instrua a `AI` a solicitar esclarecimentos.
@@ -51,7 +51,7 @@ Estas diretrizes garantem clareza, consistência e estrutura apropriada ao públ
 
 ---
 
-👥 `Audience Awareness`
+👥 Consideração do Público (`Audience Awareness`)
 
 - Adapte a linguagem, profundidade e foco do `prompt` (e do `output` solicitado) ao público jurídico pretendido, conforme definido no `System Prompt`:
     - **Advogado Sênior/Especialista:** Foco em precisão, análise complexa, opções estratégicas.
@@ -63,14 +63,14 @@ Estas diretrizes garantem clareza, consistência e estrutura apropriada ao públ
 
 ---
 
-🎓 `Examples (Shots & Structure)`
+🎓 Exemplos (Shots e Estrutura) (`Examples (Shots & Structure)`)
 
 - Use `few-shot learning` (fornecendo 1-3 exemplos de entrada/saída) quando precisar que a `AI` siga um padrão muito específico de classificação ou formatação não coberto por instruções diretas.
 - Para formatos de `output` jurídico complexos (FIRAC, Ementa), forneça um **exemplo estruturado completo** (`template` ou `model`) dentro do `prompt` para guiar a `AI`, como visto nos exemplos do curso.
 
 ---
 
-📋 `General Notes`
+📋 Notas Gerais (`General Notes`)
 
 - Sempre alinhe o design do `prompt` (instruções, estrutura, `role`) com o `output` desejado.
 - Certifique-se de que `[STYLE] Tag` + `Tone` + `Structure` + `Scope` + `Audience` estejam alinhados e consistentes dentro do mesmo `prompt`.
