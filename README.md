@@ -126,7 +126,7 @@ Contribuições de profissionais do direito são especialmente bem-vindas! Por f
 
 ## ⚖️ Licença
 
-Este projeto está licenciado sob a [Licença MIT].
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 ## ⚠️ Aviso Legal
 
