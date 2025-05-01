@@ -1,5 +1,7 @@
 # ⚖️ Engenheiro de Prompts Jurídicos (Legal Prompt Engineer)
 
+![Engenheiro de Prompts Jurídicos Logo](logo.png)
+
 **Descrição:** Um sistema especializado para geração, avaliação e refinamento de prompts de Inteligência Artificial (IA) no contexto jurídico.
 
 ![Licença MIT](https://img.shields.io/badge/Licença-MIT-blue.svg)
