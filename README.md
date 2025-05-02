@@ -30,7 +30,7 @@ O **Engenheiro de Prompts Jurídicos** oferece as seguintes funcionalidades:
 Utilizar o **Engenheiro de Prompts Jurídicos** traz os seguintes benefícios:
 
 *   **Precisão Terminológica**: Garante o uso correto e preciso da terminologia jurídica.
-*   **Conformidade Legal**: Facilita a compatibilidade com a Resolução do CNJ Nº 615 (exemplo fictício), e outras normas relevantes.
+*   **Conformidade Legal**: Facilita a compatibilidade com a Resolução do CNJ Nº 615, e outras normas relevantes.
 *   **Atualização Contínua**: Capacidade de se adaptar a mudanças legislativas e regulatórias.
 *   **Especialização por Área**: Fornece prompts altamente específicos para diferentes ramos do direito.
 *   **Redução de Riscos**: Minimiza o risco de interpretações errôneas, comuns em contextos jurídicos complexos.

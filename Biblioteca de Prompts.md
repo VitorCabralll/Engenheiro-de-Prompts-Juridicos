@@ -1,14 +1,14 @@
 # Biblioteca de Prompts - (v2.6)
 
-Esta biblioteca contém padrões de `prompt` prontos para uso, categorizados por estilo e propósito, **primariamente derivados ou ilustrando diretamente as estruturas de `prompt` robustas e técnicas ensinadas no material fornecido**
+Esta biblioteca contém padrões de `prompt` prontos para uso, categorizados por estilo e propósito, *primariamente derivados ou ilustrando diretamente as estruturas de `prompt` robustas e técnicas ensinadas no material fornecido*
+
 
 ---
 
-**[FORMAT-CONSTRAINED / ROLE-BASED]**
-# Prompts que exigem uma saída estruturada específica, baseados nos modelos ensinados neste guia.
+# Prompts que exigem uma saída estruturada específica, baseados nos modelos ensinados neste guia
 
 1.  **[PROMPT ANÁLISE FIRAC+ - Baseado no Material do Curso]**
-    `Prompt:`
+
     ```
     # TAREFA PRINCIPAL
     - ANALISE EM DETALHE o caso jurídico fornecido LENDO TODOS OS DOCUMENTOS, INCORPORE NUANCES e forneça uma ARGUMENTAÇÃO LÓGICA.
