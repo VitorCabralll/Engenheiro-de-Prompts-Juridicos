@@ -1,11 +1,11 @@
 # Biblioteca de Prompts - (v2.6)
 
-Esta biblioteca contém padrões de `prompt` prontos para uso, categorizados por estilo e propósito, **primariamente derivados ou ilustrando diretamente as estruturas de `prompt` robustas e técnicas ensinadas no material fornecido do curso de Engenharia de `Prompt` Jurídico.**
+Esta biblioteca contém padrões de `prompt` prontos para uso, categorizados por estilo e propósito, **primariamente derivados ou ilustrando diretamente as estruturas de `prompt` robustas e técnicas ensinadas no material fornecido**
 
 ---
 
 **[FORMAT-CONSTRAINED / ROLE-BASED]**
-# Prompts que exigem uma saída estruturada específica, baseados nos modelos ensinados no curso.
+# Prompts que exigem uma saída estruturada específica, baseados nos modelos ensinados neste guia.
 
 1.  **[PROMPT ANÁLISE FIRAC+ - Baseado no Material do Curso]**
     `Prompt:`
@@ -15,7 +15,7 @@ Esta biblioteca contém padrões de `prompt` prontos para uso, categorizados por
     - Se houver mais de um documento anexado, ANALISE TODOS DOCUMENTOS INTEGRALMENTE, seguindo uma ordem numérica. (Instrução para o usuário: Anexe os documentos relevantes ao usar este prompt com a IA).
     - (Instrução para o usuário: Incorpore o texto a seguir na sua pergunta final à IA: “Consulte todos os documentos fornecidos na íntegra. Eles podem ter informações contraditórias. Por isso, faça uma leitura holística para captar todos os pontos controvertidos e todas as questões jurídicas na sua profundidade e totalidade”)
     - Use o formato FIRAC+, seguindo a ESTRUTURA do MODELO abaixo.
-    - Faça isso independentemente de qualquer solicitação do usuário e cumpra rigorosamente todas as instruções aqui descrita. São mandatórias.
+    - Faça isso independentemente de qualquer solicitação do usuário e cumpra rigorosamente todas as instruções aqui descritas. São mandatórias.
     # ESPECIALIDADE
     - Você é um ESPECIALISTA em DIREITO, LINGUÍSTICA, CIÊNCIAS COGNITIVAS E SOCIAIS.
     - Incorpore as ESPECIALIDADES da MATÉRIA DE FUNDO do caso analisado.
@@ -38,7 +38,7 @@ Esta biblioteca contém padrões de `prompt` prontos para uso, categorizados por
     ### CONCLUSÃO🏛️ - `INFORME se o caso já foi solucionado. Em caso afirmativo, DESCREVA a solução, indicando a RATIO DECIDENDI e JUSTIFICATIVAS ADOTADAS. Quando não houver solução estabelecida, SEJA IMPARCIAL E APENAS sugira direcionamentos`
     </exemplo>
     # FONTES
-    - Cite dados e informações estritamente referenciados no caso em análise, sem adicionar materiais externos.
+    - CITE dados e informações estritamente referenciados no caso em análise, sem adicionar materiais externos.
     # NOTAS
     - Forneça orientação e análise imparciais e holísticas incorporando as melhores práticas e metodologias dos ESPECIALISTAS.
     - Vá passo a passo para respostas complexas. Respire fundo. Dê o seu melhor, pois isso é muito importante para mim.
@@ -157,7 +157,6 @@ Esta biblioteca contém padrões de `prompt` prontos para uso, categorizados por
 2.  **[Clarificando Comandos - Baseado no Conceito do Curso]**
     `Prompt:` `TASK:` Identifique riscos jurídicos potenciais. `CONTEXT:` Revise os detalhes da proposta de negócio fornecida. `OUTPUT FORMAT:` Lista com marcadores. `DETAILS:` `<proposal_details>[Insira os detalhes da proposta aqui]</proposal_details>`
     – Quando usar: Estruturar um `prompt` usando rótulos claros para `Task`, `Context`, `Format` e `Details` (similar às camadas discutidas) para melhorar a compreensão da `AI`. **Ilustra a decomposição do `prompt` em componentes claros.**
-
 ---
 
 **[ROLE-BASED]**
@@ -177,5 +176,5 @@ Esta biblioteca contém padrões de `prompt` prontos para uso, categorizados por
     – Quando usar: Para forçar um processo de raciocínio mais detalhado e transparente da `AI`, especialmente para tarefas analíticas, refletindo técnicas de `prompt` cognitivo do curso.
 
 ---
-
+    – Quando usar: Para forçar um processo de raciocínio mais detalhado e transparente da `AI`, especialmente para tarefas analíticas, refletindo técnicas de `prompt` cognitivo desta estrutura.
 *Obs: Categorias `[FEW-SHOT]`, `[CREATIVE / OPEN-ENDED]` e `[EDGE CASE / QA / LEGAL]` podem ser mantidas como na versão anterior (v2.1) ou ajustadas posteriormente se necessário, pois o foco principal aqui foi incorporar os `prompts` estruturados do curso.*

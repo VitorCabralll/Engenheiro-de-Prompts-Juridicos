@@ -1,6 +1,6 @@
 # Exemplos de Prompts Especializados - (v2.6)
 
-Esta coleção inclui exemplos de `prompts` jurídicos mais elaborados ou que combinam múltiplas técnicas e conceitos ensinados no curso (personas, formatos, análise complexa, etc.). Todos os `prompts` seguem os princípios de formatação, clareza e estrutura definidos.
+Esta coleção inclui exemplos de `prompts` jurídicos mais elaborados ou que combinam múltiplas técnicas e conceitos ensinados neste guia (personas, formatos, análise complexa, etc.). Todos os `prompts` seguem os princípios de formatação, clareza e estrutura definidos.
 
 ---
 

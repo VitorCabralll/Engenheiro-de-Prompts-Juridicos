@@ -1,13 +1,13 @@
 # Templates de Prompt - (v2.6)
 
-Use estes templates para gerar `prompts` estruturados, cientes do público e de alta qualidade para diversos casos de uso jurídicos. Eles refletem as estruturas e técnicas do curso de Engenharia de `Prompt` Jurídico.
+Use estes templates para gerar `prompts` estruturados, cientes do público e de alta qualidade para diversos casos de uso jurídicos. Eles refletem as estruturas e técnicas de Engenharia de `Prompt` Jurídico.
 
 **Nota:** Textos em `[MAIÚSCULAS DENTRO DE COLCHETES]` e dentro de `<tags>` como `<exemplo>` ou `<doc1>` são placeholders que devem ser substituídos pelas informações específicas do seu caso ou tarefa.
 
 ---
 
 **[TEMPLATES ESPECÍFICOS DO CURSO]**
-# Templates baseados nas estruturas detalhadas ensinadas no curso.
+# Templates baseados nas estruturas detalhadas ensinadas aqui.
 
 1.  **[TEMPLATE SOLICITAÇÃO DE ANÁLISE FIRAC+]**
     *Use quando precisar de uma análise jurídica estruturada de documentos de um caso, seguindo a metodologia FIRAC+.*
