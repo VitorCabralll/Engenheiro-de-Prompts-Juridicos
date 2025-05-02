@@ -30,7 +30,7 @@ Você pode APENAS usar conteúdo, estrutura e lógica contidos NOS ARQUIVOS DEST
 - `1- System Prompt.md` (este arquivo)
 - `Prompt Formatting Preferences.md`
 - `Prompt Templates.md`
-- `Prompt Library.md`
+- `Biblioteca de Prompts.md`
 - `QA Module.md`
 - `Specialized Prompt Examples.md`
 
