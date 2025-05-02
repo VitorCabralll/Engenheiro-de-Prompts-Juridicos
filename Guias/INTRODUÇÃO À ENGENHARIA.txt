@@ -1,0 +1,41 @@
+## ​OBJETIVO 🎯
+
+Neste vídeo, você será introduzido à engenharia de prompt, uma habilidade essencial para interagir eficazmente com modelos de linguagem natural em larga escala, como o ChatGPT. Nosso objetivo é capacitá-lo a dominar técnicas avançadas de comunicação com essas ferramentas, permitindo que você alcance interações mais sofisticadas e produtivas. Vamos desmistificar a importância de estruturar comandos de forma clara e eficiente, aprimorando a qualidade das respostas obtidas. Além disso, você aprenderá a diferenciar entre interações básicas e avançadas, elevando suas habilidades para um nível profissional.
+
+## PONTOS CENTRAIS 📝
+
+- **Introdução à Engenharia de Prompt**:
+    - Definição e importância da engenharia de prompt.
+    - Comparação entre interações básicas e avançadas com LLMs.
+- **Comunicação Natural com Máquinas**:
+    - A transição da programação tradicional para interações em linguagem natural.
+    - Exemplos de como comandos estruturados em Markdown podem melhorar respostas.
+- **Persona e Qualidade das Respostas**:
+    - Impacto da persona assumida pelo modelo na qualidade das respostas.
+    - Estudos sobre a influência da persona no desempenho dos modelos de linguagem.
+- **Técnicas de Prompt Avançadas**:
+    - Utilização de sistemas de marcação e delimitadores.
+    - Exemplos práticos de como estruturar prompts complexos.
+- **Qualidade do Usuário e Respostas do Modelo**:
+    - Importância do conhecimento do usuário para melhorar a interação.
+    - Metáfora do "oceano de informações" e a seleção de tokens de alta qualidade.
+- **Benchmarking e Comparação de Modelos**:
+    - Comparação de desempenho entre diferentes modelos de LLMs.
+    - Discussão sobre limitações e avanços no processamento de prompts.
+- **Ferramentas e Práticas de Melhoria**:
+    - Recomendações de técnicas de engenharia de prompt para tarefas específicas.
+    - Exemplos de uso de prompts pré-configurados e GPTs customizados.
+
+## PARA APROFUNDAR 🔗
+
+**- Artigos sobre engenharia de prompt**  
+
+​
+
+- Artigo sobre técnicas de prompt avançadas - em anexo
+
+GUIA DE ENGENHARIA DE PROMPT DA ANTHROPIC: [https://docs.anthropic.com/pt/docs/intro-to-claude](https://docs.anthropic.com/pt/docs/intro-to-claude)​  
+
+​GUIA DE ENGENHARIA DE PROMPT: [https://www.promptingguide.ai/pt](https://www.promptingguide.ai/pt)​  
+
+PROMPT ENGINEERING GUIDE: [https://learnprompting.org/docs/introduction](https://learnprompting.org/docs/introduction)

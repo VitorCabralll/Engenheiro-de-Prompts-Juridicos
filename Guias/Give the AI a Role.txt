@@ -1,0 +1,45 @@
+Give the AI a Role (System Prompts)
+When using AI models, you can dramatically improve performance by giving it a role. This technique, known as role prompting, is one of the most powerful ways to use system prompts.
+The right role can turn a general assistant into your virtual domain expert!
+System Prompt Tips
+Use the system parameter to set the AI's role. Put everything else, like task-specific instructions, in the user prompt instead.
+Why Use Role Prompting?
+●	Enhanced accuracy: In complex scenarios like legal analysis or financial modelling, role prompting can significantly boost performance.
+●	Tailored tone: Whether you need a CFO's brevity or a copywriter's flair, role prompting adjusts communication style.
+●	Improved focus: By setting the role context, the AI stays more within the bounds of your task's specific requirements.
+Role Prompting Tip
+Experiment with roles! A data scientist might see different insights than a marketing strategist for the same data. A data scientist specialising in customer insight analysis for Fortune 500 companies might yield different results still!
+Examples
+Legal Contract Analysis
+Without a role:
+     Analyze this software licensing agreement for potential risks:
+<contract>
+{{CONTRACT}}
+</contract>
+
+Focus on indemnification, liability, and IP ownership.
+
+With a role:
+     You are the General Counsel of a Fortune 500 tech company. We're considering this software licensing agreement for our core data infrastructure:
+<contract>
+{{CONTRACT}}
+</contract>
+
+Analyze it for potential risks, focusing on indemnification, liability, and IP ownership. Give your professional opinion.
+Financial Analysis
+Without a role:
+     Analyze this dataset of our Q2 financials:
+<data>
+{{FINANCIALS}}
+</data>
+
+Highlight key trends and recommend actions.
+With a role:
+     You are the CFO of a high-growth B2B SaaS company. We're in a board meeting discussing our Q2 financials:
+<data>
+{{FINANCIALS}}
+</data>
+
+Analyze key trends, flag concerns, and recommend strategic actions. Our investors want aggressive growth but are wary of our burn rate.
+Notice how adding a specific role dramatically improves the depth, precision, and relevance of the AI's responses. Instead of general analysis, you get expert-level insights tailored to your specific context.
+

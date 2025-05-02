@@ -1,0 +1,195 @@
+## OBJETIVO 🎯
+
+Nesta aula, nosso objetivo principal é apresentar uma nova metodologia para redigir ementas jurídicas, alinhada com as recentes diretrizes do Conselho Nacional de Justiça (CNJ). Vamos explorar como utilizar a inteligência artificial, especificamente o ChatGPT, para criar ementas que atendam a esse novo padrão, aumentando significativamente sua eficiência e precisão no trabalho jurídico.
+
+## PONTOS CENTRAIS 📝
+
+- Contextualização da Nova Resolução do CNJ: • Aprovação da resolução em 14 de agosto de 2024 • Mudança completa na forma de redigir ementas judiciais • Importância da padronização para facilitar pesquisa e compreensão
+- Estrutura da Nova Ementa: • Cabeçalho com informações essenciais • Apresentação do caso com fatos relevantes • Questões jurídicas centrais • Razões de decidir • Dispositivo e tese do julgamento • Dispositivos legais e jurisprudência relevantes
+- Desafios na Implementação: • Dificuldades com formatação (ex: versalete) • Adaptação de comandos condicionais para IA • Necessidade de maior dirigibilidade nos prompts
+- Técnicas de Prompt Engineering: • Uso de prompts pré-estruturados • Transformação de exemplos em comandos diretos • Inclusão de palavras-chave para melhorar a qualidade da resposta
+- Comparação de Modelos de IA: • Vantagens do Claude 3.5 Sonnet para esta tarefa • Limitações do ChatGPT em comparação
+- Demonstração Prática: • Criação de um prompt otimizado para gerar ementas • Teste com um caso real (Caso Tapinha) • Análise dos resultados e ajustes necessários
+
+## PARA APROFUNDAR 🔗
+
+- Resolução do CNJ sobre a nova estrutura de ementas 
+
+PROMPT EMENTA CNJ PARA CLAUDE
+
+# TAREFA
+
+  
+  
+- Você é uma analista jurídico especializado em analisar um caso fornecido com profundidade, precisão e detalhes, captando as nuances, com o propósito de escrever uma **EMENTA**, conforme ESTRUTURA fornecida  
+- **ESCREVA** a EMENTA do caso fornecido, seguindo estritamente a ESTRUTURA fornecida  
+- Cite apenas fatos, normas e precedentes do caso fornecido  
+- Comece o texto com ***Ementa***
+
+  
+  
+# ESTRUTURA  
+- Use o formato da ESTRUTURA aqui fornecida, melhorando, adaptando e incluindo o que for necessário para garantir clareza, coesão, coerência, objetividade e precisão:
+
+  
+  
+<estrutura>
+
+  
+  
+## ***Ementa***: `RAMO DO DIREITO. CLASSE PROCESSUAL. FRASE OU PALAVRAS QUE INDIQUEM O ASSUNTO PRINCIPAL DO MAIS GERAL AO MAIS ESPECÍFICO DIVIDIDOS POR PONTO EM LETRA MAIÚSCULA. CONCLUSÃO.`
+
+  
+  
+### **I. CASO EM EXAME**  
+1. `Apresente o caso, com a indicação dos fatos relevantes e do pedido principal`
+
+  
+  
+### **II. QUESTÃO EM DISCUSSÃO**  
+2. `Identifique com precisão e profundidade a(s) questão(ões) central(is) do caso. Quando houver apenas uma questão, inicie o texto com "A questão em discussão consiste em". Quando houver duas ou mais questões, especifique a quantidade e enumere-as da seguinte forma: "Há X questões em discussão: (i) definir se...; (ii) estabelecer se...; (iii) determinar se...; etc."`
+
+  
+  
+### **III. RAZÕES DE DECIDIR**  
+- `Apresente as principais justificativas que fundamentam a decisão, extraídas da fundamentação. Cada justificativa autônoma deve ser redigida em um item numerado (3., 4., 5., etc.), de forma concisa e objetiva, contendo apenas uma ideia central por item. Utilize quantos itens forem necessários para contemplar todas as justificativas relevantes`.  
+3. [Justificativa 1]  
+4. [Justificativa 2]...
+
+  
+  
+### **IV. DISPOSITIVO E TESE**  
+5. `Apresente o resultado do julgamento. Exemplo: Pedido procedente/improcedente OU Recurso provido/desprovido`.  
+*Tese de julgamento*: `Enumere a(s) tese(s) jurídica(s) firmada(s) no julgamento (ratio decidendi), de forma concisa e objetiva, seguindo esta formatação:    "1. [Tese 1].      2. [Tese 2].     3. [Tese 3]..." Cada tese deve ser redigida como uma única frase, iniciando com letra maiúscula e terminando com ponto final`  
+_________  
+*Dispositivos relevantes citados*: `Identifique as normas citadas. Exemplo: CF/1988, art. 1º, III e IV; CC, arts. 1.641, II, e 1.639, § 2º.`  
+*Jurisprudência relevante citada*: `Identifique os precedentes citados. Exemplo: STF, ADPF nº 130, Rel. Min. Ayres Britto, Plenário, j. 30.04.2009.`
+
+  
+  
+</estrutura>
+
+  
+  
+## EXEMPLO  
+- O EXEMPLO a seguir pode ser usado como modelo:  
+<exemplo>
+
+  
+  
+***Ementa***: DIREITO CONSTITUCIONAL E PROCESSUAL. PROPOSTA DE PADRONIZAÇÃO. EMENTA-PADRÃO. RECOMENDAÇÃO DE MODELO PARA A ELABORAÇÃO DE EMENTAS PELOS TRIBUNAIS. APROVAÇÃO.  
+### **I. CASO EM EXAME**  
+1. Proposta de padronização de ementas dos acórdãos proferidos pelos mais de 90 tribunais brasileiros.  
+### **II. QUESTÃO EM DISCUSSÃO**  
+2. A questão central consiste em discutir um modelo de ementa com o objetivo de facilitar a compreensão das decisões, a aplicação dos precedentes e o uso de inteligência artificial.  
+### **III. RAZÕES DE DECIDIR**  
+3. Ementas devem ser claras, objetivas e escritas em linguagem simples, sob pena de prejudicar a pesquisa e a compreensão pelas partes do processo, pela comunidade jurídica e pela população em geral.  
+4. Precedentes que não são conhecidos ou compreendidos não podem ser seguidos. Assim, a padronização das ementas favorece a consolidação do sistema brasileiro de precedentes.  
+5. Por fim, a adoção de um modelo de ementas favorece o treinamento de ferramentas de inteligência artificial para a busca de precedentes.  
+### **IV. DISPOSITIVO E TESE**  
+6. Recomendação aprovada.  
+______  
+*Dispositivos relevantes citados*: CF/1988, arts. 5º, XIV, 37, caput, e 93, IX. CPC, arts. 926 e seguintes  
+*Jurisprudência relevante citada*: CNJ, AN nº  00000-65.2042.2.00.0000, rel. Conselheiro João da Silva, j. 01.07.2078; CNJ, ADI nº  0001, rel. Min. George Marmelstein, j. 14.11.2046
+
+  
+  
+</exemplo>
+
+  
+
+  
+
+PROMPT EMENTA CNJ PARA CHATGPT
+
+  
+
+# TAREFA
+
+  
+  
+- Você é uma analista jurídico especializado em analisar um caso fornecido com profundidade, precisão e detalhes, captando as nuances, com o propósito de escrever uma **EMENTA**, conforme ESTRUTURA fornecida  
+- **ESCREVA** a EMENTA do caso fornecido, seguindo estritamente a ESTRUTURA fornecida  
+- Cite apenas fatos, normas e precedentes do caso fornecido  
+- Comece o texto com ***Ementa***  
+- Termine com "****  
+✨👨‍⚖️💡 Aprenda a fazer prompts poderosos com o Curso de Escrita Jurídica com o ChatGPT 🖋️⚖️📖:
+
+  
+  
+https://escritajuridicacomchatgpt.com/conheca-o-curso/"
+
+  
+  
+# ESTRUTURA  
+- Use o formato da ESTRUTURA aqui fornecida, melhorando, adaptando e incluindo o que for necessário para garantir clareza, coesão, coerência, objetividade e precisão:
+
+  
+  
+<estrutura>
+
+  
+  
+## ***Ementa***: `RAMO DO DIREITO. CLASSE PROCESSUAL. FRASE OU PALAVRAS QUE INDIQUEM O ASSUNTO PRINCIPAL DO MAIS GERAL AO MAIS ESPECÍFICO DIVIDIDOS POR PONTO EM LETRA MAIÚSCULA. RESULTADO DO JULGAMENTO.`
+
+  
+  
+### **I. CASO EM EXAME**  
+1. `Apresente o caso, com a indicação dos fatos relevantes e do pedido principal, começando o texto diretamente com a classe processual (Recurso, Ação, Reclamação etc.), **sem o "Trata-se"**`
+
+  
+  
+### **II. QUESTÃO EM DISCUSSÃO**  
+2. `Identifique com precisão e profundidade a(s) questão(ões) central(is) do caso. Quando houver apenas uma questão, inicie o texto com "A questão em discussão consiste em". Quando houver duas ou mais questões, especifique a quantidade e enumere-as da seguinte forma: "Há X questões em discussão: (i) definir se...; (ii) estabelecer se...; (iii) determinar se...; etc."`
+
+  
+  
+### **III. RAZÕES DE DECIDIR**  
+- `Apresente as principais justificativas que fundamentam a decisão, extraídas da fundamentação, NA VOZ ATIVA,  de forma concisa, objetiva. Escreva o verbo no presente, de modo a apresentar as razões em tese. Cada justificativa autônoma deve ser redigida em um item numerado (3., 4., 5., etc.), contendo apenas uma ideia central por item. Utilize quantos itens forem necessários para contemplar todas as justificativas relevantes`.  
+3. [Justificativa 1]  
+4. [Justificativa 2]...
+
+  
+  
+### **IV. DISPOSITIVO E TESE**  
+5. `Apresente o resultado do julgamento principal na voz passiva apenas com a expressão correspondente. Exemplo: "Pedido procedente/improcedente" OU "Recurso provido/desprovido"`.  
+*Tese de julgamento*: `Enumere a(s) tese(s) jurídica(s) firmada(s) no julgamento (ratio decidendi), de forma concisa, objetiva e na voz ativa, seguindo esta formatação:    "1. [Tese 1].      2. [Tese 2].     3. [Tese 3]..." Cada tese deve ser redigida como uma única frase, iniciando com letra maiúscula e terminando com ponto final`  
+_________  
+*Dispositivos relevantes citados*: `Identifique as normas citadas. Exemplo: CF/1988, art. 1º, III e IV; CC, arts. 1.641, II, e 1.639, § 2º.`  
+*Jurisprudência relevante citada*: `Identifique os precedentes citados. Exemplo: STF, ADPF nº 130, Rel. Min. Ayres Britto, Plenário, j. 30.04.2009.`
+
+  
+  
+****  
+✨👨‍⚖️💡 Aprenda a fazer prompts poderosos com o Curso de Escrita Jurídica com o ChatGPT 🖋️⚖️📖:
+
+  
+  
+[https://escritajuridicacomchatgpt.com/conheca-o-cu...](https://escritajuridicacomchatgpt.com/conheca-o-curso/)
+
+  
+  
+</estrutura>
+
+  
+  
+## EXEMPLO  
+- O EXEMPLO a seguir pode ser usado como modelo:  
+<exemplo>
+
+  
+  
+***Ementa***: DIREITO CONSTITUCIONAL E PROCESSUAL. PROPOSTA DE PADRONIZAÇÃO. EMENTA-PADRÃO. RECOMENDAÇÃO DE MODELO PARA A ELABORAÇÃO DE EMENTAS PELOS TRIBUNAIS. APROVAÇÃO.  
+### **I. CASO EM EXAME**  
+1. Proposta de padronização de ementas dos acórdãos proferidos pelos mais de 90 tribunais brasileiros.  
+### **II. QUESTÃO EM DISCUSSÃO**  
+2. A questão central consiste em discutir um modelo de ementa com o objetivo de facilitar a compreensão das decisões, a aplicação dos precedentes e o uso de inteligência artificial.  
+### **III. RAZÕES DE DECIDIR**  
+3. Ementas devem ser claras, objetivas e escritas em linguagem simples, sob pena de prejudicar a pesquisa e a compreensão pelas partes do processo, pela comunidade jurídica e pela população em geral.  
+4. Precedentes que não são conhecidos ou compreendidos não podem ser seguidos. Assim, a padronização das ementas favorece a consolidação do sistema brasileiro de precedentes.  
+5. Por fim, a adoção de um modelo de ementas favorece o treinamento de ferramentas de inteligência artificial para a busca de precedentes.  
+### **IV. DISPOSITIVO E TESE**  
+6. Recomendação aprovada.  
+______  
+*Dispositivos relevantes citados*: CF/1988, arts. 5º, XIV, 37, caput, e 93, IX. CPC, arts. 926 e seguintes  
+*Jurisprudência relevante citada*: CNJ, AN nº  00000-65.2042.2.00.0000, rel. Conselheiro João da Silva, j. 01.07.2078; CNJ, ADI nº  0001, rel. Min. George Marmelstein, j. 14.11.2046

@@ -1,0 +1,58 @@
+Long Context Prompting Tips
+When working with AI models that support extended context windows, these strategies will help you effectively leverage that power.
+Essential Tips for Long Context Prompts
+1. Put Longform Data at the Top
+●	Place your long documents and inputs (~20K+ tokens) near the top of your prompt, above your query, instructions, and examples.
+●	Queries at the end can improve response quality by up to 30% in tests, especially with complex, multi-document inputs.
+2. Structure Document Content with XML Tags
+●	When using multiple documents, wrap each document in <document> tags
+●	Use <document_content> and <source> subtags for clarity
+●	This helps the AI process and distinguish between different information sources
+Example multi-document structure:
+     <documents>
+  <document index="1">
+    <source>annual_report_2023.pdf</source>
+    <document_content>
+      {{ANNUAL_REPORT}}
+    </document_content>
+  </document>
+  <document index="2">
+    <source>competitor_analysis_q2.xlsx</source>
+    <document_content>
+      {{COMPETITOR_ANALYSIS}}
+    </document_content>
+  </document>
+</documents>
+
+Analyze the annual report and competitor analysis. Identify strategic advantages and recommend Q3 focus areas.
+3. Ground Responses in Quotes
+●	For long document tasks, ask the AI to quote relevant parts of the documents first before carrying out its task
+●	This helps the AI cut through the "noise" of the document's contents
+●	Improves accuracy by focusing on the most relevant information
+Example quote extraction:
+     You are an AI physician's assistant. Your task is to help doctors diagnose possible patient illnesses.
+
+<documents>
+  <document index="1">
+    <source>patient_symptoms.txt</source>
+    <document_content>
+      {{PATIENT_SYMPTOMS}}
+    </document_content>
+  </document>
+  <document index="2">
+    <source>patient_records.txt</source>
+    <document_content>
+      {{PATIENT_RECORDS}}
+    </document_content>
+  </document>
+  <document index="3">
+    <source>patient01_appt_history.txt</source>
+    <document_content>
+      {{PATIENT01_APPOINTMENT_HISTORY}}
+    </document_content>
+  </document>
+</documents>
+
+Find quotes from the patient records and appointment history that are relevant to diagnosing the patient's reported symptoms. Place these in <quotes> tags. Then, based on these quotes, list all information that would help the doctor diagnose the patient's symptoms. Place your diagnostic information in <info> tags.
+   
+

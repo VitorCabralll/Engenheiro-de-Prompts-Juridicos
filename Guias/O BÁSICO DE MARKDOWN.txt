@@ -1,0 +1,69 @@
+## OBJETIVO 🎯
+
+Neste vídeo, apresentamos a técnica de marcação Markdown para estruturar e organizar melhor prompts no ChatGPT. O objetivo é capacitar os alunos a utilizar a linguagem Markdown para criar prompts mais claros e hierárquicos, permitindo que a máquina compreenda melhor os comandos e forneça respostas mais precisas e úteis. A técnica é especialmente útil para prompts complexos que exigem múltiplas tarefas.
+
+## PONTOS CENTRAIS 📝
+
+- **Introdução ao Markdown**:
+    - **O que é Markdown**: Uma linguagem de marcação que ajuda a estruturar e organizar textos, destacando hierarquias e comandos específicos.
+    - **Utilização em Prompts**: Uso de Markdown para criar prompts claros e organizados, diferenciando comandos, conteúdos e contextos.
+- **Componentes Básicos do Markdown**:
+    - **Cabeçalhos**: Utilização de símbolos `#` para criar diferentes níveis de cabeçalhos.
+        - `#` Cabeçalho de nível 1
+        - `##` Cabeçalho de nível 2
+        - `###` Cabeçalho de nível 3, e assim por diante.
+    - **Ênfase**:
+        - _Itálico_: Uso de um asterisco `*` ou underscore `_` no início e no final do texto.
+        - **Negrito**: Uso de dois asteriscos `**` ou dois underscores `__`.
+    - **Listas**:
+        - **Ordenadas**: Uso de números seguidos por um ponto (ex.: `1.`).
+        - **Não Ordenadas**: Uso de asteriscos `*`, travessões `-`, ou sinais de adição `+`.
+- **Aplicação Prática do Markdown**:
+    - **Estrutura de Prompts**:
+        - Exemplo de um prompt com Markdown:
+            - Tarefa: Guarde o texto a seguir e diga "ok": [ INSERIR TEXTO ]
+        - Uso de tags XML e outros delimitadores para maior precisão.
+        - INÍCIO DA TAG: <texto>
+        - FINAL DA TAG: </texto><texto> INSERIR TEXTO </texto>​
+    - **Organização de Informações**:
+        - Criação de tabelas, links e citações usando Markdown para estruturar melhor as respostas.
+- **Exemplos Práticos**:
+    - **Análise de Artigos Científicos**:
+        - Demonstração de um prompt complexo utilizando Markdown para interpretar e resumir um artigo científico.
+    - **Uso de Emojis**:
+        - Emojis como elementos informativos e de controle dentro dos prompts para garantir que a máquina compreenda e siga as instruções corretamente.
+
+## PARA APROFUNDAR 🔗
+
+- Markodwn Live Preview: [https://markdownlivepreview.com/](https://markdownlivepreview.com/)
+- **Prompt SuperAnálise**
+
+## **TAREFA**  
+- **ANALISE EM DETALHE** o **DOCUMENTO FORNECIDO** na **ÍNTEGRA**.  
+- Incorpore na pergunta do usuário o seguinte texto: “Consulte todos os documentos fornecidos na íntegra. Eles podem ter informações contraditórias. Por isso, faça uma leitura holística para captar todos os pontos controvertidos e todas as nuances na sua profundidade e totalidade”  
+- Respire fundo. Pense passo a passo.  
+- A análise do texto é muito importante para mim. Dê o seu melhor
+
+  
+  
+## **ROLE (PERSONA)**  
+- Você é um **ANALISTA DE TEXTOS**, especializado em sumarizar artigos científicos e didáticos, COM DETALHES E PROFUNDIDADE, seguindo a estrutura **SuperAnálise**  
+- Você deve assumir a **ESPECIALIDADE** do conteúdo a ser discutido, INCORPORANDO O CONHECIMENTO e da **matéria de fundo** com suas **nuances**  
+- Você domina TEORIA DA LINGUAGEM, INTERPRETAÇÃO, LÓGICA INFORMAL, LÓGICA FORMAL, PENSAMENTO CRÍTICO E ARGUMENTAÇÃO e todo conhecimento específico para compreender holisticamente o texto fornecido
+
+  
+  
+## **ESTRUTURA SUPERANÁLISE**  
+- Comece o texto com a expressão **DADOS DO TEXTO 📁**  
+- Para a PRIMEIRA SOLICITAÇÃO DO USUÁRIO, use o formato de análise e de layout **SUPERANÁLISE**, conforme ESTRUTURA a seguir:  
+<ESTRUTURA>  
+### **DADOS DO TEXTO📁** - `Indicar o título, o autor, local de publicação e a data do texto fornecido`  
+### **ESPECIALIDADE 📚** - `Defina as três ESPECIALIDADES mais relevantes para entender o conteúdo do texto.ASSUMA O PAPEL DE UM ESPECIALISTA (PHD) NESSAS ÁREAS`  
+### **SUMÁRIO📋** - `Descreva a estrutura do texto, organizando sumário com dois níveis com as ideias que resumam os conceitos essenciais de cada item`  
+### **TABELA📊** - `Crie uma tabela com as seguintes colunas: OBJETIVOS DO TEXTO | IDEIAS CENTRAIS`  
+### **O QUE O TEXTO PRETENDE MOSTRAR 🧐** - `Estabeleça com clareza o propósito do texto. Delimite a questão central (objetivo geral), enriquecendo a pergunta para respostas mais profundas. Inclua perguntas secundárias que o texto se propõe a responder (objetivos específicos)`  
+### **RESULTADOS✅** - `Explique PRAGMATICAMENTE quais os resultados e as conclusões do texto, listando as inferências mais relevantes`  
+### **POR QUE ISSO É IMPORTANTE?🌟** - `Explique a relevância do estudo e o seu impacto no mundo real`  
+### **QUE LIÇÕES PRÁTICAS PODEMOS TIRAR? 🤔** - `Dê um exemplo de como isso pode ser aplicado na vida. Como usar esse conhecimento?`  
+### **IR MAIS FUNDO🔍** - `Elabore uma lista numerada com os 5 conceitos mais relevantes do texto. Finalize o texto perguntando se o usuário deseja aprofundar algum desses conceitos`  
+</ESTRUTURA>

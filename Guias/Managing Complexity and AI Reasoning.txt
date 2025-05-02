@@ -1,0 +1,150 @@
+Let the AI Think (Chain of Thought)
+When faced with complex tasks like research, analysis, or problem-solving, giving AI space to think can dramatically improve its performance. Chain of thought (CoT) prompting encourages breaking down problems step-by-step, leading to more accurate and nuanced outputs.
+Why Let the AI Think?
+●	Accuracy: Stepping through problems reduces errors, especially in math, logic, analysis, or generally complex tasks.
+●	Coherence: Structured thinking leads to more cohesive, well-organised responses.
+●	Debugging: Seeing the thought process helps you pinpoint where prompts may be unclear.
+Why Not Let the AI Think?
+●	Increased output length may impact latency.
+●	Not all tasks require in-depth thinking. Use CoT judiciously for the right balance of performance and latency.
+●	Use CoT for tasks that a human would need to think through, like complex math, multi-step analysis, writing complex documents, or decisions with many factors.
+How to Prompt for Thinking
+The chain of thought techniques below are ordered from least to most complex:
+CoT tip: Always have the AI output its thinking. Without outputting the thought process, no thinking occurs!
+1.	Basic prompt: Include "Think step-by-step" in your prompt.
+○	Lacks guidance on how to think
+2.	Guided prompt: Outline specific steps to follow in the thinking process.
+○	Lacks structuring to separate the answer from the thinking
+3.	Structured prompt: Use XML tags like <thinking> and <answer> to separate reasoning from the final answer.
+Examples
+Basic CoT Example
+     Draft personalised emails to donors asking for contributions to this year's Care for Kids program.
+
+Program information:
+<program>{{PROGRAM_DETAILS}}</program>
+
+Donor information:
+<donor>{{DONOR_DETAILS}}</donor>
+
+Think step-by-step before you write the email.
+
+Structured Guided CoT Example
+     Draft personalised emails to donors asking for contributions to this year's Care for Kids program.
+
+Program information:
+<program>{{PROGRAM_DETAILS}}</program>
+
+Donor information:
+<donor>{{DONOR_DETAILS}}</donor>
+
+Think before you write the email in <thinking> tags. First, think through what messaging might appeal to this donor given their donation history and which campaigns they've supported in the past. Then, think through what aspects of the Care for Kids program would appeal to them, given their history. Finally, write the personalised donor email in <email> tags, using your analysis.
+  
+With step-by-step thinking, analyses become much richer, calculations are more precise, and recommendations are more thoroughly justified compared to outputs without CoT prompting.
+Chain Complex Prompts for Stronger Performance
+When working with complex tasks, AI models can sometimes drop the ball if you try to handle everything in a single prompt. Chain of thought (CoT) prompting is great, but what if your task has multiple distinct steps that each require in-depth thought?
+Enter prompt chaining: breaking down complex tasks into smaller, manageable subtasks.
+Why Chain Prompts?
+●	Accuracy: Each subtask gets full attention, reducing errors
+●	Clarity: Simpler subtasks mean clearer instructions and outputs
+●	Traceability: Easily pinpoint and fix issues in your prompt chain
+When to Chain Prompts
+Use prompt chaining for multi-step tasks like research synthesis, document analysis, or iterative content creation. When a task involves multiple transformations, citations, or instructions, chaining prevents dropping or mishandling steps.
+Debugging tip: If the AI misses a step or performs poorly, isolate that step in its own prompt. This lets you fine-tune problematic steps without redoing the entire task.
+How to Chain Prompts
+1.	Identify subtasks: Break your task into distinct, sequential steps
+2.	Structure with XML for clear handoffs: Use XML tags to pass outputs between prompts
+3.	Have a single-task goal: Each subtask should have a single, clear objective
+4.	Iterate: Refine subtasks based on performance
+Example Chained Workflows
+●	Multi-step analysis
+●	Content creation pipelines: Research → Outline → Draft → Edit → Format
+●	Data processing: Extract → Transform → Analyze → Visualize
+●	Decision-making: Gather info → List options → Analyze each → Recommend
+●	Verification loops: Generate content → Review → Refine → Re-review
+Optimization tip: For tasks with independent subtasks (like analyzing multiple docs), create separate prompts and run them in parallel for speed.
+Advanced: Self-Correction Chains
+You can chain prompts to have the AI review its own work. This catches errors and refines outputs, especially for high-stakes tasks.
+Example: Legal Contract Analysis (Without Chaining)
+     You're our Chief Legal Officer. Review this SaaS contract for risks, focusing on data privacy, SLAs, and liability caps.
+
+<contract>
+{{CONTRACT}}
+</contract>
+
+Then draft an email to the vendor with your concerns and proposed changes.
+The AI may miss the instruction to provide proposed changes in its email draft.
+Example: Legal Contract Analysis (With Chaining)
+Prompt 1:
+     You're our Chief Legal Officer. Review this SaaS contract for risks, focusing on data privacy, SLAs, and liability caps.
+
+<contract>
+{{CONTRACT}}
+</contract>
+
+Output your findings in <risks> tags.
+Prompt 2:
+     Draft an email to a SaaS product vendor outlining the following concerns and proposing changes. Here are the concerns:
+<concerns>
+{{CONCERNS}}
+</concerns>
+Prompt 3:
+     Your task is to review an email and provide feedback. Here is the email:
+<email>
+{{EMAIL}}
+</email>
+
+Give feedback on tone, clarity, and professionalism.
+In all examples, the chained approach produces more thorough, accurate, and useful outputs compared to attempting the entire task in a single prompt.
+Extended Thinking Tips
+Extended thinking allows AI models to work through complex problems step-by-step, improving performance on difficult tasks by showing the reasoning process before providing a final answer.
+Technical Considerations
+●	Thinking Tokens: Start with the minimum thinking budget (1024 tokens) and incrementally increase based on task complexity.
+●	Large Workloads: For workloads requiring >32K thinking tokens, use batch processing to avoid networking issues and timeouts.
+●	Language Optimization: Extended thinking performs best in English, though final outputs can be in any supported language.
+●	Minimal Thinking: For simple tasks needing minimal thinking, standard mode with traditional chain-of-thought prompting using XML tags (like <thinking>) is recommended.
+Prompting Techniques
+Use General Instructions First
+●	Start with high-level instructions rather than prescriptive step-by-step guidance
+●	Example: "Please think about this math problem thoroughly and in great detail. Consider multiple approaches and show your complete reasoning."
+●	Only add specific structured instructions after reviewing initial thinking output if needed
+Multishot Prompting with Extended Thinking
+●	Provide examples of thinking through problems using XML tags like <thinking> or <scratchpad>
+●	The AI will generalize these patterns to its formal extended thinking process
+●	Example:
+     Problem 1: What is 15% of 80?
+
+<thinking>
+To find 15% of 80:
+1. Convert 15% to a decimal: 15% = 0.15
+2. Multiply: 0.15 × 80 = 12
+</thinking>
+
+The answer is 12.
+
+Now solve this one:
+Problem 2: What is 35% of 240?
+Maximizing Instruction Following
+●	Be clear and specific about requirements
+●	For complex instructions, break them into numbered steps
+●	Allow sufficient budget for the AI to process instructions fully
+Debugging and Steering Behavior
+●	Use thinking output to debug logic
+●	Don't pass thinking output back in user text blocks (may degrade results)
+●	Prefilling extended thinking is not allowed
+●	Instruct the AI not to repeat its thinking in the final output if you want a clean response
+Optimizing Long Outputs and Longform Thinking
+●	For dataset generation: "Please create an extremely detailed table of..."
+●	For detailed content generation:
+○	Increase both maximum thinking length AND explicitly ask for longer outputs
+○	For very long outputs (20,000+ words), request a detailed outline with word counts
+○	Index paragraphs to the outline and maintain specified word counts
+Self-Reflection and Verification
+●	Ask the AI to verify its work with simple tests before declaring a task complete
+●	Instruct it to analyze whether previous steps achieved expected results
+●	For coding tasks, ask it to run through test cases in its extended thinking
+●	Example: "Before you finish, please verify your solution with test cases for: n=0, n=1, n=5, n=10. And fix any issues you find."
+Use Cases That Benefit from Extended Thinking
+●	Complex STEM problems requiring mental models and sequential logical steps
+●	Constraint optimization problems with multiple competing requirements
+●	Strategic analysis using structured thinking frameworks
+

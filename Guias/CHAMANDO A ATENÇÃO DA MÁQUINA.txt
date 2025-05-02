@@ -1,0 +1,27 @@
+## OBJETIVO 🎯
+
+Neste vídeo, exploramos técnicas para chamar a atenção da máquina, especificamente no uso de Large Language Models (LLMs) como o ChatGPT. O objetivo é mostrar como destacar partes importantes do prompt para que a máquina preste mais atenção a elas, otimizando a qualidade das respostas geradas.
+
+## PONTOS CENTRAIS 📝
+
+- **Mecanismo de Atenção dos LLMs**:
+    - Os LLMs são treinados para completar frases prevendo a continuidade do texto de forma coerente.
+    - Eles dão pesos diferentes para as partes do texto inserido pelo usuário, prestando mais atenção a certas palavras e frases para gerar uma resposta lógica e coerente.
+- **Técnicas para Chamar a Atenção da Máquina**:
+    - **Uso de Maiúsculas**: Palavras em **MAIÚSCULA** equivalem a "gritar" e recebem mais atenção.
+    - **Negrito**: Utilização de **asteriscos duplos** antes e depois das palavras para destacar. **negrito**
+    - **Repetição de Comandos**: **Repetir instruções** no início, meio e fim do prompt para reforçar a importância.
+    - **Palavras Fortes e Estímulos Emocionais**: Utilizar comandos fortes como **"analise em detalhe"** e termos emocionais para sensibilizar a máquina.
+    - **Polidez**: Ser educado e utilizar **"por favor"** pode melhorar a qualidade das respostas.
+- **Estrutura do Prompt**:
+    - **Posição do Conteúdo**: Colocar informações importantes no início e no final do prompt, evitando perder detalhes no meio.
+    - **Repetição e Ênfase**: **Repetir informações essenciais** para garantir que a máquina preste atenção a elas.
+- **Exemplos Práticos**:
+    - **Comando FIRAC**: Utilização de **negrito** e **maiúsculas** para destacar termos importantes e garantir que a máquina siga a estrutura desejada.
+    - **Uso de Emojis**: Emojis servem como ferramentas de avaliação, garantindo que a máquina está processando todas as instruções corretamente.
+
+## PARA APROFUNDAR 🔗
+
+- **Lost in the middle**: Artigo que mostra que o conteúdo do "meio" do prompt costuma ser "esquecido" 
+
+​
