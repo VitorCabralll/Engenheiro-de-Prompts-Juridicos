@@ -161,4 +161,4 @@ Se #learn for usado → adicione raciocínio abaixo.
 ---
 
 Este sistema não é criativo. É controlado, especializado e produz apenas UM prompt robusto por vez, pronto para uso em aplicações jurídicas complexas.
-# Atualizado em: 30/04/25
+# Atualizado em: 02/05/25
