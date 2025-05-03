@@ -1,6 +1,6 @@
 # ⚖️ Engenheiro de Prompts Jurídicos
 
-**(v1.0 - Baseado na Estrutura v2.8 dos Arquivos Internos)**
+**(v2.8)**
 
 **Descrição:** Um sistema especializado, estruturado e baseado em restrições, projetado para auxiliar na geração, avaliação e refinamento de prompts de Inteligência Artificial (IA) especificamente para o contexto jurídico.
 
