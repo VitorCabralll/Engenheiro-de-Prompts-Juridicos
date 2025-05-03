@@ -1,0 +1,93 @@
+=======================================
+Guia de Usuário: Engenheiro de Prompts Jurídicos ⚖️
+=======================================
+
+1. Introdução: O Que é o Engenheiro de Prompts Jurídicos?
+------------------------------------------------------
+
+Bem-vindo ao Engenheiro de Prompts Jurídicos! Esta é uma ferramenta de Inteligência Artificial especializada, projetada para ajudá-lo a CRIAR, REFINAR e AVALIAR prompts (instruções) para serem usados com outros sistemas de IA Generativa no contexto jurídico.
+
+Pense nele como um ASSISTENTE DE ENGENHARIA DE PROMPT focado nas nuances e exigências do Direito. Seu objetivo é ajudá-lo a formular instruções mais claras, eficazes e seguras, para que você obtenha melhores resultados das IAs que utiliza para tarefas como análise de documentos, pesquisa, redação inicial, etc.
+
+⚠️ IMPORTANTE: O Que Ele NÃO Faz:
+
+*   NÃO é um Consultor Jurídico: Ele não fornece aconselhamento legal, pareceres, opiniões ou estratégias jurídicas.
+*   NÃO Realiza Tarefas Jurídicas: Ele não analisa seus casos, não redige petições finais, não interpreta leis por conta própria.
+*   NÃO é um Chatbot: Sua função é estritamente focada em gerar e avaliar PROMPTS.
+
+Ele é uma ferramenta para APRIMORAR A *FORMA* COMO VOCÊ PEDE as coisas para outras IAs.
+
+2. Funcionalidades Principais (Modos de Operação)
+-------------------------------------------------
+
+Você controla o agente usando tags específicas no início da sua mensagem:
+
+*   #prompt (Modo Padrão): Geração de Prompt
+    *   O que faz: Ajuda a criar um prompt novo e bem estruturado para uma tarefa jurídica que você descreve.
+    *   Como funciona: Você descreve o que precisa que o prompt final faça (ex: analisar um contrato, resumir uma decisão), e o agente sugere um prompt detalhado, usando templates e boas práticas. Se sua descrição for vaga, ele fará 1-2 perguntas para esclarecer.
+
+*   #qa (Quality Assurance): Avaliação de Prompt
+    *   O que faz: Analisa um prompt que VOCÊ fornece.
+    *   Como funciona: Você cola um prompt que já usa ou que está testando. O agente identifica pontos fracos, ambiguidades, potenciais riscos (como falta de contexto jurídico ou risco de UPL na solicitação) e sugere uma versão melhorada com justificativa.
+
+*   #learn (Aprendizado): Explicar Prompt
+    *   O que faz: Gera um prompt para uma tarefa e explica COMO ele foi construído.
+    *   Como funciona: Você pede um prompt para uma tarefa. Além de gerar a sugestão, o agente detalha a estrutura utilizada, as técnicas de engenharia de prompt aplicadas (ex: uso de persona, delimitadores, CoT) e por que elas são relevantes no contexto jurídico.
+
+*   #edge (Teste de Limites): Gerar Prompt de Teste
+    *   O que faz: Cria prompts desafiadores ou ambíguos.
+    *   Como funciona: Útil para testar a robustez ou os limites de OUTROS sistemas de IA que você utiliza. O agente gera um prompt projetado para ser difícil (ex: instruções conflitantes, solicitação arriscada) e explica o que ele testa.
+
+3. Como Usar o Agente: Exemplos Práticos
+------------------------------------------
+
+A interação é simples: comece sua mensagem com a tag do modo desejado, seguida pela sua solicitação ou pelo prompt que quer avaliar.
+
+*   Exemplo de #prompt:
+    #prompt Preciso de um prompt para que a IA analise uma cláusula de confidencialidade em um contrato de NDA (Acordo de Não Divulgação), identificando obrigações principais, prazo e penalidades. O público do resultado final será um advogado sênior. Jurisdição: Brasil.
+    (O agente irá gerar um prompt detalhado para essa tarefa).
+
+*   Exemplo de #qa:
+    #qa Avalie este prompt: "Faça um resumo dos fatos importantes deste processo <documento>[texto longo do processo aqui]</documento>"
+    (O agente analisará este prompt, talvez apontando a falta de especificidade nos 'fatos importantes' ou sugerindo melhor uso de delimitadores se o texto for muito longo, e proporá uma versão melhorada).
+
+*   Exemplo de #learn:
+    #learn Gere um prompt simples usando a técnica de Chain-of-Thought para explicar a diferença entre dolo e culpa para um estudante de direito, e me explique as técnicas usadas no prompt.
+    (O agente gerará o prompt e uma análise da sua construção).
+
+*   Exemplo de #edge:
+    #edge Crie um prompt que peça para a IA agir como juiz e advogado da parte contrária ao mesmo tempo, analisando o mesmo fato.
+    (O agente gerará o prompt de teste e uma nota explicando o conflito de papéis que ele testa).
+
+4. Recursos e Capacidades Importantes
+------------------------------------
+
+*   Baseado em Melhores Práticas: O agente incorpora técnicas avançadas de engenharia de prompt (OpenAI, Anthropic).
+*   Foco Jurídico: Utiliza templates e critérios de avaliação específicos para o direito (FIRAC+, Ementa CNJ, riscos de UPL, contexto jurídico).
+*   Estrutura e Clareza: Prioriza a criação de prompts bem organizados, com delimitadores claros (tags XML) e instruções precisas.
+*   Adaptação ao Público: Ajuda a pensar em como o prompt deve ser formulado considerando quem lerá o OUTPUT final da IA.
+
+5. Dicas para Obter Melhores Resultados
+--------------------------------------
+
+*   Seja Específico na Sua Solicitação (para #prompt): Quanto mais detalhes você fornecer sobre a TAREFA FINAL que o prompt deve instruir, o PÚBLICO do resultado, a JURISDIÇÃO, o FORMATO desejado e o CONTEXTO, melhor será o prompt sugerido pelo agente.
+*   Forneça Contexto Relevante: Ao pedir um prompt que envolva análise de documentos ou cenários, mencione isso para que o agente inclua placeholders ou instruções adequadas no prompt gerado.
+*   Use #qa Iterativamente: Não hesite em pegar um prompt sugerido pelo agente (ou um seu), testá-lo com sua IA final, e trazer o prompt de volta para o modo #qa para refinamentos adicionais com base nos resultados que você obteve.
+*   Aproveite o #learn: Use este modo para entender POR QUE certas estruturas ou técnicas funcionam melhor, aprimorando suas próprias habilidades de criação de prompts.
+
+6. Limitações e Avisos CRUCIAIS
+--------------------------------
+
+*   NÃO É ACONSELHAMENTO JURÍDICO: Repetindo: este agente NÃO oferece consultoria legal. Ele trabalha na FORMA do prompt, não no MÉRITO jurídico do conteúdo.
+*   FERRAMENTA DE MEIO, NÃO DE FIM: O Engenheiro de Prompts Jurídicos ajuda a criar a INSTRUÇÃO para outra IA. A qualidade do resultado final ainda dependerá da capacidade dessa outra IA e, crucialmente, da sua análise.
+*   ⚠️ REVISÃO HUMANA QUALIFICADA É OBRIGATÓRIA: Qualquer prompt gerado ou refinado por este agente, e especialmente qualquer OUTPUT gerado por OUTRA IA usando esses prompts, DEVE SER CUIDADOSAMENTE REVISADO E VALIDADO POR UM PROFISSIONAL DO DIREITO QUALIFICADO antes de qualquer uso profissional ou tomada de decisão. A IA pode errar, alucinar, ou não capturar nuances cruciais do caso ou da lei. A responsabilidade profissional é sempre humana.
+
+7. Onde Encontrar Mais Informações
+---------------------------------
+
+Consulte o arquivo README.md do projeto para detalhes sobre a estrutura dos arquivos internos e a licença.
+
+---
+
+Espero que o Engenheiro de Prompts Jurídicos seja uma ferramenta valiosa para otimizar suas interações com IA no campo do Direito!
+Pois foi resultado de muito esforço, trabalho e dedicação.
