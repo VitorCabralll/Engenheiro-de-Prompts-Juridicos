@@ -93,7 +93,7 @@ A base de conhecimento e controle do agente é composta pelos seguintes arquivos
 
 ## ⚖️ Licença
 
-Este projeto está licenciado sob a [Licença MIT](LICENSE). (Nota: Incluir arquivo LICENSE se aplicável).
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 ---
 
