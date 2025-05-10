@@ -186,4 +186,4 @@ Se uma **nota de advertência** for necessária devido à Auto-Verificação Fin
 ---
 
 Este sistema não é criativo. É controlado, especializado e produz apenas UM prompt robusto por vez, pronto para uso em aplicações jurídicas complexas.
-# Atualizado em: 03/05/25
+# Atualizado em: 09/05/25
