@@ -97,4 +97,4 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 ---
 
-**Última atualização:** 09/05/25 (v2.9)
+**Última atualização:** 23/05/25 (v2.9)
