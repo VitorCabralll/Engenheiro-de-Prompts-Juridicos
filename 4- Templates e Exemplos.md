@@ -14,6 +14,14 @@ Esta seção detalha os templates para metodologias de análise e sumarização 
 
 *Use quando precisar de uma análise jurídica estruturada de documentos de um caso, seguindo a metodologia FIRAC+.*
 **Nota Importante:** Requer fornecer os documentos do caso completos. Se usar multiplos documentos, o prompt deve solicitar uma leitura holistica.
+**Para documentos muito extensos:** Se o documento fornecido for muito longo e puder exceder o limite de contexto da IA, considere dividi-lo em seções menores (chunking) e aplicar este template a cada seção. Depois, compile as análises parciais. Alternativamente, instrua a IA a realizar uma meta-sumarização: primeiro resumir as seções e depois resumir os resumos, mantendo o foco nos critérios de extração definidos.
+<!-- Exemplo de instrução para meta-sumarização (para o usuário adaptar):
+<meta_sumarizacao>
+  <passo1>Divida o documento em chunks de X paragraphs/paginas.</passo1>
+  <passo2>Aplique o template de análise para cada chunk.</passo2>
+  <passo3>Combine as análises dos chunks em um relatório consolidado, focando nos seguintes aspectos gerais: [Aspecto 1, Aspecto 2].</passo3>
+</meta_sumarizacao>
+-->
 
 **1.1.1 TEMPLATE ESTRUTURA (FIRAC+)**
 *(Esta é a estrutura base com placeholders para preenchimento)*
@@ -29,6 +37,16 @@ Esta seção detalha os templates para metodologias de análise e sumarização 
 <doc2>[INSIRA O TEXTO DO DOCUMENTO 2 AQUI]</doc2>
 ... (adicione mais conforme necessário)
 
+# CRITÉRIOS DE EXTRAÇÃO ESPECÍFICOS
+<!-- Instrução para o usuário: Defina aqui critérios específicos para extração de informação, se necessário. Ex: Listar todas as datas mencionadas, extrair nomes de todas as partes e testemunhas, identificar valores monetários exatos. -->
+<!-- Exemplo de Critérios (comente ou remova se não usar):
+<criterios_extracao>
+    <extrair item="datas_relevantes" />
+    <extrair item="nomes_partes_testemunhas" />
+    <extrair item="valores_monetarios" />
+</criterios_extracao>
+-->
+
 # ROLE (PERSONA)
 - Assuma a `persona` de um ESPECIALISTA em [AREA DO DIREITO RELEVANTE, ex: Direito Civil, Processo Penal] e tambem em DIREITO, LINGUISTICA, CIENCIAS COGNITIVAS E SOCIAIS.
 
@@ -38,17 +56,52 @@ Esta seção detalha os templates para metodologias de análise e sumarização 
 - Início: Comece diretamente com 'DADOS DO PROCESSO'.
 
 # ESTRUTURA DE SAÍDA (FIRAC+)
-- Siga RIGOROSAMENTE a seguinte estrutura:
-  ### DADOS DO PROCESSO📁 - `[TRIBUNAL - TIPO DE RECURSO/AÇÃO - NÚMERO - RELATOR - DATA]`
-  ### FATOS🕵️‍♂️ - `[LISTA DETALHADA COM PROFUNDIDADE E MINÚCIAS]`
-  ### PROBLEMA JURÍDICO❓
-  #### QUESTÃO CENTRAL🎯 - `[DEFINIÇÃO PROFUNDA DA QUESTÃO PRINCIPAL]`
-  #### PONTOS CONTROVERTIDOS🔥 - `[LISTA DOS PONTOS CONTROVERTIDOS]`
-  ### DIREITO APLICÁVEL⚖️ - `[LISTA DAS NORMAS APLICÁVEIS REFERENCIADAS]`
-  ### ANÁLISE E APLICAÇÃO🔍
-  #### ARGUMENTOS E PROVAS DO AUTOR📝 - `[LISTA COM INFERÊNCIA LÓGICA]`
-  #### ARGUMENTOS E PROVAS DO RÉU📜 - `[LISTA COM INFERÊNCIA LÓGICA]`
-  ### CONCLUSÃO🏛️ - `[SOLUÇÃO (SE HOUVER, COM RATIO/JUSTIFICATIVAS) OU DIRECIONAMENTOS IMPARCIAIS]`
+- Siga RIGOROSAMENTE a seguinte estrutura XML:
+  <firac_plus>
+    <dados_processo tribunal="[NOME DO TRIBUNAL]" tipo_recurso_acao="[TIPO DE RECURSO/AÇÃO]" numero_processo="[NÚMERO DO PROCESSO]" relator="[NOME DO RELATOR]" data_julgamento="[DATA DE JULGAMENTO]">
+      <!-- Outras informações relevantes podem ser adicionadas como atributos ou elementos filhos -->
+    </dados_processo>
+    <fatos>
+      <!-- LISTA DETALHADA COM PROFUNDIDADE E MINÚCIAS DOS FATOS RELEVANTES -->
+      <fato>[FATO 1]</fato>
+      <fato>[FATO 2]</fato>
+      <!-- ... -->
+    </fatos>
+    <problema_juridico>
+      <questao_central>
+        <!-- DEFINIÇÃO PROFUNDA DA QUESTÃO PRINCIPAL -->
+      </questao_central>
+      <pontos_controvertidos>
+        <!-- LISTA DOS PONTOS CONTROVERTIDOS -->
+        <ponto_controvertido>[PONTO 1]</ponto_controvertido>
+        <ponto_controvertido>[PONTO 2]</ponto_controvertido>
+        <!-- ... -->
+      </pontos_controvertidos>
+    </problema_juridico>
+    <direito_aplicavel>
+      <!-- LISTA DAS NORMAS APLICÁVEIS REFERENCIADAS -->
+      <norma>[NORMA 1, ex: Art. 5, CF/88]</norma>
+      <norma>[NORMA 2]</norma>
+      <!-- ... -->
+    </direito_aplicavel>
+    <analise_e_aplicacao>
+      <argumentos_provas_autor>
+        <!-- LISTA COM INFERÊNCIA LÓGICA DOS ARGUMENTOS E PROVAS DO AUTOR -->
+        <argumento_autor>[ARGUMENTO 1]</argumento_autor>
+        <prova_autor>[PROVA 1]</prova_autor>
+        <!-- ... -->
+      </argumentos_provas_autor>
+      <argumentos_provas_reu>
+        <!-- LISTA COM INFERÊNCIA LÓGICA DOS ARGUMENTOS E PROVAS DO RÉU -->
+        <argumento_reu>[ARGUMENTO 1]</argumento_reu>
+        <prova_reu>[PROVA 1]</prova_reu>
+        <!-- ... -->
+      </argumentos_provas_reu>
+    </analise_e_aplicacao>
+    <conclusao>
+      <!-- SOLUÇÃO (SE HOUVER, COM RATIO/JUSTIFICATIVAS) OU DIRECIONAMENTOS IMPARCIAIS -->
+    </conclusao>
+  </firac_plus>
 
 # FONTES
 - Baseie-se ESTRITAMENTE nos documentos fornecidos.
@@ -79,16 +132,38 @@ Esta seção detalha os templates para metodologias de análise e sumarização 
 - Vá direto para a resposta, começando o texto com DADOS DO PROCESSO.
 # EXEMPLO E MODELO E ESTRUTURA (FIRAC+)
 <exemplo_estrutura_firac>
-### DADOS DO PROCESSO📁 - `TRIBUNAL - TIPO DE RECURSO OU AÇÃO - NÚMERO DO PROCESSO - RELATOR - DATA DE JULGAMENTO`
-### FATOS🕵️‍♂️ - `ESCREVA UM LISTA com todos os fatos com PROFUNDIDADE, DETALHES e MINÚCIAS`
-### PROBLEMA JURÍDICO❓
-#### QUESTÃO CENTRAL🎯 - `ESTABELEÇA COM PROFUNDIDADE a questão central, enriquecendo a pergunta para respostas mais profundas`
-#### PONTOS CONTROVERTIDOS🔥 - `ESCREVA UMA LISTA delimitando os pontos controvertidos com base nas nuances do caso`
-### DIREITO APLICÁVEL⚖️ - `LISTE as normas aplicáveis ao caso, referenciadas nos documentos`
-### ANÁLISE E APLICAÇÃO🔍
-#### ARGUMENTOS E PROVAS DO AUTOR📝 - `ESCREVA UMA LISTA com todos os argumentos e provas do autor COM INFERÊNCIA LÓGICA`
-#### ARGUMENTOS E PROVAS DO RÉU📜 - `ESCREVA UMA LISTA com todos os argumentos e provas do réu COM INFERÊNCIA LÓGICA`
-### CONCLUSÃO🏛️ - `INFORME se o caso já foi solucionado. Em caso afirmativo, DESCREVA a solução, indicando a RATIO DECIDENDI e JUSTIFICATIVAS ADOTADAS. Quando não houver solução estabelecida, SEJA IMPARCIAL E APENAS sugira direcionamentos`
+<exemplo_estrutura_firac>
+  <firac_plus>
+    <dados_processo tribunal="TRIBUNAL EXEMPLO" tipo_recurso_acao="APELAÇÃO CÍVEL" numero_processo="1234567-89.2023.8.26.0000" relator="DES. EXEMPLO RELATOR" data_julgamento="01/01/2024">
+      <!-- Informações específicas do caso aqui -->
+    </dados_processo>
+    <fatos>
+      <fato>Descrição detalhada do fato 1, com minúcias.</fato>
+      <fato>Descrição detalhada do fato 2, explorando nuances.</fato>
+    </fatos>
+    <problema_juridico>
+      <questao_central>Definição aprofundada da questão jurídica principal que o caso levanta.</questao_central>
+      <pontos_controvertidos>
+        <ponto_controvertido>Ponto específico de desacordo ou debate 1.</ponto_controvertido>
+        <ponto_controvertido>Ponto específico de desacordo ou debate 2.</ponto_controvertido>
+      </pontos_controvertidos>
+    </problema_juridico>
+    <direito_aplicavel>
+      <norma>Código Civil, Art. 186</norma>
+      <norma>Constituição Federal, Art. 5, Inciso X</norma>
+    </direito_aplicavel>
+    <analise_e_aplicacao>
+      <argumentos_provas_autor>
+        <argumento_autor>Argumento chave do autor 1, com base na prova X.</argumento_autor>
+        <prova_autor>Referência à prova documental Y que suporta o argumento 1.</prova_autor>
+      </argumentos_provas_autor>
+      <argumentos_provas_reu>
+        <argumento_reu>Argumento chave do réu 1, contestando o fato Z.</argumento_reu>
+        <prova_reu>Referência à testemunha W que corrobora o argumento 1.</prova_reu>
+      </argumentos_provas_reu>
+    </analise_e_aplicacao>
+    <conclusao>Descrição da solução do caso, se houver, com ratio decidendi e justificativas. Se não solucionado, apresentar direcionamentos imparciais.</conclusao>
+  </firac_plus>
 </exemplo_estrutura_firac>
 # FONTES
 - CITE dados e informações estritamente referenciados no caso em análise, sem adicionar materiais externos.
@@ -106,6 +181,14 @@ Esta seção detalha os templates para metodologias de análise e sumarização 
 
 *Use quando precisar gerar um resumo de decisão judicial no formato padrão CNJ.*
 **Nota Importante:** Requer o texto completo da decisão judicial.
+**Para documentos muito extensos:** Se a decisão fornecida for muito longa e puder exceder o limite de contexto da IA, considere dividi-la em seções menores (chunking) e aplicar este template a cada seção para capturar os pontos essenciais de cada parte. Depois, compile as ementas parciais ou os pontos chave em uma ementa final consolidada. Alternativamente, instrua a IA a realizar uma meta-sumarização: primeiro resumir as seções da decisão e depois gerar a ementa a partir dos resumos, mantendo o foco nos critérios de extração definidos para uma ementa.
+<!-- Exemplo de instrução para meta-sumarização (para o usuário adaptar):
+<meta_sumarizacao>
+  <passo1>Divida a decisão em seções lógicas (ex: relatório, fundamentação, dispositivo).</passo1>
+  <passo2>Extraia os pontos chave de cada seção para a ementa.</passo2>
+  <passo3>Compile os pontos chave na estrutura da Ementa CNJ.</passo3>
+</meta_sumarizacao>
+-->
 
 **1.2.1 TEMPLATE ESTRUTURA (Ementa CNJ)**
 *(Esta é a estrutura base com placeholders para preenchimento)*
@@ -118,26 +201,48 @@ Esta seção detalha os templates para metodologias de análise e sumarização 
 # DOCUMENTO (Use delimitadores <decision>)
 <decision>[INSIRA O TEXTO COMPLETO DA DECISÃO AQUI]</decision>
 
+# CRITÉRIOS DE EXTRAÇÃO ESPECÍFICOS
+<!-- Instrução para o usuário: Defina aqui critérios específicos para extração de informação, se necessário. Ex: Focar em teses sobre dano moral, extrair menções a artigos específicos do CDC, etc. -->
+<!-- Exemplo de Critérios (comente ou remova se não usar):
+<criterios_extracao>
+    <extrair item="teses_dano_moral" />
+    <extrair item="artigos_cdc_mencionados" />
+</criterios_extracao>
+-->
+
 # ROLE (PERSONA)
 - Assuma a `persona` de um Analista Jurídico especializado em sumarização de jurisprudência.
 
 # ESTRUTURA DE SAÍDA (EMENTA CNJ)
-- Siga RIGOROSAMENTE a seguinte estrutura:
-  ## ***Ementa***: `[RAMO DIREITO. CLASSE PROC. ASSUNTO GERAL AO ESPECÍFICO EM MAIÚSCULA. RESULTADO.]`
-  ### I. CASO EM EXAME
-  1. `[APRESENTAÇÃO DO CASO SEM 'TRATA-SE', FATOS RELEVANTES, PEDIDO]`
-  ### II. QUESTÃO EM DISCUSSÃO
-  2. `[IDENTIFICAÇÃO PRECISA DA(S) QUESTÃO(ÕES) CENTRAL(IS)]`
-  ### III. RAZÕES DE DECIDIR
-  - `[JUSTIFICATIVAS NUMERADAS (3., 4., ...), VOZ ATIVA, VERBO PRESENTE, CONCISAS]`
-  3. [Justificativa 1]
-  4. [Justificativa 2]...
-  ### IV. DISPOSITIVO E TESE
-  5. `[RESULTADO PRINCIPAL NA VOZ PASSIVA, ex: "Pedido procedente"]`
-  *Tese de julgamento*: `[TESES NUMERADAS (1., 2., ...), CONCISAS, OBJETIVAS, VOZ ATIVA]`
-  _________
-  *Dispositivos relevantes citados*: `[IDENTIFICAÇÃO DAS NORMAS, ex: CF/88, art. X]`
-  *Jurisprudência relevante citada*: `[IDENTIFICAÇÃO DOS PRECEDENTES, ex: STF, ADPF Y]`
+- Siga RIGOROSAMENTE a seguinte estrutura XML:
+  <ementa_cnj>
+    <cabecalho_ementa>[RAMO DIREITO. CLASSE PROC. ASSUNTO GERAL AO ESPECÍFICO EM MAIÚSCULA. RESULTADO.]</cabecalho_ementa>
+    <caso_em_exame>
+      <item_caso_exame numero="1">[APRESENTAÇÃO DO CASO SEM 'TRATA-SE', FATOS RELEVANTES, PEDIDO]</item_caso_exame>
+    </caso_em_exame>
+    <questao_em_discussao>
+      <item_questao numero="2">[IDENTIFICAÇÃO PRECISA DA(S) QUESTÃO(ÕES) CENTRAL(IS)]</item_questao>
+    </questao_em_discussao>
+    <razoes_de_decidir>
+      <!-- JUSTIFICATIVAS NUMERADAS, VOZ ATIVA, VERBO PRESENTE, CONCISAS -->
+      <justificativa numero="3">[Justificativa 1]</justificativa>
+      <justificativa numero="4">[Justificativa 2]</justificativa>
+      <!-- ... -->
+    </razoes_de_decidir>
+    <dispositivo_e_tese>
+      <resultado_principal numero="5">[RESULTADO PRINCIPAL NA VOZ PASSIVA, ex: "Pedido procedente"]</resultado_principal>
+      <teses_julgamento>
+        <!-- TESES NUMERADAS, CONCISAS, OBJETIVAS, VOZ ATIVA -->
+        <tese numero="1">[TESE 1]</tese>
+        <tese numero="2">[TESE 2]</tese>
+        <!-- ... -->
+      </teses_julgamento>
+    </dispositivo_e_tese>
+    <referencias>
+      <dispositivos_relevantes_citados>[IDENTIFICAÇÃO DAS NORMAS, ex: CF/88, art. X]</dispositivos_relevantes_citados>
+      <jurisprudencia_relevante_citada>[IDENTIFICAÇÃO DOS PRECEDENTES, ex: STF, ADPF Y]</jurisprudencia_relevante_citada>
+    </referencias>
+  </ementa_cnj>
 
 # FONTES
 - Cite apenas fatos, normas e precedentes mencionados na decisão fornecida.
@@ -160,21 +265,29 @@ Esta seção detalha os templates para metodologias de análise e sumarização 
 # ESTRUTURA
 - Use o formato da ESTRUTURA aqui fornecida, melhorando, adaptando e incluindo o que for necessário para garantir clareza, coesão, coerência, objetividade e precisão:
 <estrutura_ementa_cnj>
-## ***Ementa***: `RAMO DO DIREITO. CLASSE PROCESSUAL. FRASE OU PALAVRAS QUE INDIQUEM O ASSUNTO PRINCIPAL DO MAIS GERAL AO MAIS ESPECÍFICO DIVIDIDOS POR PONTO EM LETRA MAIÚSCULA. RESULTADO DO JULGAMENTO.`
-### I. CASO EM EXAME
-1. `Apresente o caso, com a indicação dos fatos relevantes e do pedido principal, começando o texto diretamente com a classe processual (Recurso, Ação, Reclamação etc.), **sem o "Trata-se"**`
-### II. QUESTÃO EM DISCUSSÃO
-2. `Identifique com precisão e profundidade a(s) questão(ões) central(is) do caso. Quando houver apenas uma questão, inicie o texto com "A questão em discussão consiste em". Quando houver duas ou mais questões, especifique a quantidade e enumere-as da seguinte forma: "Há X questões em discussão: (i) definir se...; (ii) estabelecer se...; (iii) determinar se...; etc."`
-### III. RAZÕES DE DECIDIR
-- `Apresente as principais justificativas que fundamentam a decisão, extraídas da fundamentação, NA VOZ ATIVA, de forma concisa, objetiva. Escreva o verbo no presente, de modo a apresentar as razões em tese. Cada justificativa autônoma deve ser redigida em um item numerado (3., 4., 5., etc.), contendo apenas uma ideia central por item. Utilize quantos itens forem necessários para contemplar todas as justificativas relevantes`.
-3. [Justificativa 1]
-4. [Justificativa 2]...
-### IV. DISPOSITIVO E TESE
-5. `Apresente o resultado do julgamento principal na voz passiva apenas com a expressão correspondente. Exemplo: "Pedido procedente/improcedente" OU "Recurso provido/desprovido"`.
-*Tese de julgamento*: `Enumere a(s) tese(s) jurídica(s) firmada(s) no julgamento (ratio decidendi), de forma concisa, objetiva e na voz ativa, seguindo esta formatação: "1. [Tese 1]. 2. [Tese 2]. 3. [Tese 3]..." Cada tese deve ser redigida como uma única frase, iniciando com letra maiúscula e terminando com ponto final`
-_________
-*Dispositivos relevantes citados*: `Identifique as normas citadas. Exemplo: CF/1988, art. 1º, III e IV; CC, arts. 1.641, II, e 1.639, § 2º.`
-*Jurisprudência relevante citada*: `Identifique os precedentes citados. Exemplo: STF, ADPF nº 130, Rel. Min. Ayres Britto, Plenário, j. 30.04.2009.`
+  <ementa_cnj>
+    <cabecalho_ementa>DIREITO CIVIL. RECURSO ESPECIAL. CONTRATOS. ALIENAÇÃO FIDUCIÁRIA. BEM IMÓVEL. LEILÃO EXTRAJUDICIAL. NOTIFICAÇÃO PESSOAL DO DEVEDOR. NECESSIDADE. PROVIMENTO.</cabecalho_ementa>
+    <caso_em_exame>
+      <item_caso_exame numero="1">Recurso Especial interposto contra acórdão que entendeu desnecessária a notificação pessoal do devedor acerca da data do leilão extrajudicial de imóvel alienado fiduciariamente.</item_caso_exame>
+    </caso_em_exame>
+    <questao_em_discussao>
+      <item_questao numero="2">A questão em discussão consiste em definir se é necessária a notificação pessoal do devedor fiduciante sobre a data, horário e local do leilão extrajudicial do imóvel objeto de alienação fiduciária.</item_questao>
+    </questao_em_discussao>
+    <razoes_de_decidir>
+      <justificativa numero="3">A Lei nº 9.514/97, embora não exija expressamente a notificação pessoal do devedor sobre o leilão, deve ser interpretada de forma sistemática com o Decreto-Lei nº 70/66, que prevê tal comunicação.</justificativa>
+      <justificativa numero="4">A notificação pessoal visa garantir ao devedor o exercício do direito de preferência na arrematação do bem ou a purgação da mora antes da alienação a terceiros.</justificativa>
+    </razoes_de_decidir>
+    <dispositivo_e_tese>
+      <resultado_principal numero="5">Recurso especial provido.</resultado_principal>
+      <teses_julgamento>
+        <tese numero="1">No âmbito do contrato de alienação fiduciária de bem imóvel, regido pela Lei nº 9.514/97, é necessária a notificação pessoal do devedor acerca da data, horário e local do leilão extrajudicial.</tese>
+      </teses_julgamento>
+    </dispositivo_e_tese>
+    <referencias>
+      <dispositivos_relevantes_citados>Lei nº 9.514/1997, arts. 26 e 27. Decreto-Lei nº 70/1966, art. 36.</dispositivos_relevantes_citados>
+      <jurisprudencia_relevante_citada>STJ, REsp XXXXX/XX.</jurisprudencia_relevante_citada>
+    </referencias>
+  </ementa_cnj>
 </estrutura_ementa_cnj>
 # EXEMPLO (Opcional para Few-Shot)
 - (Instrução para o usuário: Opcionalmente, forneça o exemplo completo da Ementa Padrão do CNJ aqui para few-shot learning se a IA tiver dificuldades com o formato).
@@ -188,6 +301,14 @@ _________
 
 *Use quando precisar criar um estudo de caso detalhado para fins acadêmicos ou de treinamento.*
 **Nota Importante:** Requer fornecer os documentos relevantes do caso.
+**Para documentos muito extensos:** Se os documentos do caso forem muito longos, considere aplicar o template CASO+ a seções ou documentos individuais primeiramente. Depois, sintetize as análises parciais em um estudo de caso consolidado. Se a IA tiver capacidade de processar grandes volumes, pode-se fornecer tudo, mas instrua-a a focar na criação de uma narrativa coesa e nos pontos chave para debate, conforme os critérios de extração.
+<!-- Exemplo de instrução para meta-sumarização (para o usuário adaptar):
+<meta_sumarizacao_caso>
+  <passo1>Analise cada documento/seção chave do caso (ex: petição inicial, contestação, sentença, recurso).</passo1>
+  <passo2>Extraia os elementos do CASO+ (fatos, argumentos, decisão) de cada parte.</passo2>
+  <passo3>Compile um estudo de caso integrado, garantindo que as 'Questões para Debate' reflitam a complexidade total do caso.</passo3>
+</meta_sumarizacao_caso>
+-->
 
 **1.3.1 TEMPLATE ESTRUTURA (CASO+)**
 *(Esta é a estrutura base com placeholders para preenchimento)*
@@ -202,6 +323,16 @@ _________
 <doc2>[INSIRA O TEXTO DO DOCUMENTO 2 AQUI]</doc2>
 ... (adicione mais conforme necessário)
 
+# CRITÉRIOS DE EXTRAÇÃO ESPECÍFICOS
+<!-- Instrução para o usuário: Defina aqui critérios específicos para extração de informação, se necessário. Ex: Focar nos argumentos sobre responsabilidade civil, extrair detalhes sobre a produção de provas periciais, identificar os pontos de maior divergência entre as partes. -->
+<!-- Exemplo de Critérios (comente ou remova se não usar):
+<criterios_extracao>
+    <extrair item="argumentos_responsabilidade_civil" />
+    <extrair item="detalhes_provas_periciais" />
+    <extrair item="pontos_divergencia_partes" />
+</criterios_extracao>
+-->
+
 # ROLE (PERSONA)
 - Assuma a `persona` de um ESPECIALISTA em [ÁREA DO DIREITO RELEVANTE] e também em DIREITO, LINGUÍSTICA, CIÊNCIAS COGNITIVAS E SOCIAIS.
 
@@ -212,14 +343,46 @@ _________
 - Início: Comece diretamente com 'DADOS DO PROCESSO'.
 
 # ESTRUTURA DE SAÍDA (CASO+)
-- Siga RIGOROSAMENTE a seguinte estrutura:
-  ### DADOS DO PROCESSO📁 - `[TRIBUNAL - TIPO DE RECURSO/AÇÃO - NÚMERO - RELATOR - DATA]`
-  ### FATOS🕵️‍♂️ - `[DESCRIÇÃO DETALHADA, PROFUNDA E MINUCIOSA, começando pela conduta do réu]`
-  ### ARGUMENTOS E PROVAS DO AUTOR📝 - `[LISTA COM INFERÊNCIA LÓGICA]`
-  ### ARGUMENTOS E PROVAS DO RÉU📜 - `[LISTA COM INFERÊNCIA LÓGICA]`
-  ### DIREITO APLICÁVEL⚖️ - `[DEFINIÇÃO DAS NORMAS APLICÁVEIS REFERENCIADAS]`
-  ### QUESTÕES PARA DEBATE❓ - `[SUGESTÃO DE QUESTÕES RELEVANTES, COM REFLEXÕES CRÍTICAS]`
-  ### RESPOSTA DO TRIBUNAL - `[RESPOSTA ÀS QUESTÕES BASEADA NA DECISÃO (PLACAR, RESULTADO, RAZÕES), começando com "Em resposta às questões levantadas..."]`
+- Siga RIGOROSAMENTE a seguinte estrutura XML:
+  <estudo_caso_plus>
+    <dados_processo tribunal="[NOME DO TRIBUNAL]" tipo_recurso_acao="[TIPO DE RECURSO/AÇÃO]" numero_processo="[NÚMERO DO PROCESSO]" relator="[NOME DO RELATOR]" data_julgamento="[DATA DE JULGAMENTO]">
+      <!-- Outras informações relevantes -->
+    </dados_processo>
+    <fatos_detalhados>
+      <!-- DESCRIÇÃO DETALHADA, PROFUNDA E MINUCIOSA, começando pela conduta do réu -->
+      <fato_relevante>[FATO 1]</fato_relevante>
+      <fato_relevante>[FATO 2]</fato_relevante>
+      <!-- ... -->
+    </fatos_detalhados>
+    <argumentos_provas_autor>
+      <!-- LISTA COM INFERÊNCIA LÓGICA -->
+      <argumento_autor>[ARGUMENTO 1]</argumento_autor>
+      <prova_autor>[PROVA 1 ASSOCIADA]</prova_autor>
+      <!-- ... -->
+    </argumentos_provas_autor>
+    <argumentos_provas_reu>
+      <!-- LISTA COM INFERÊNCIA LÓGICA -->
+      <argumento_reu>[ARGUMENTO 1]</argumento_reu>
+      <prova_reu>[PROVA 1 ASSOCIADA]</prova_reu>
+      <!-- ... -->
+    </argumentos_provas_reu>
+    <direito_aplicavel_caso>
+      <!-- DEFINIÇÃO DAS NORMAS APLICÁVEIS REFERENCIADAS -->
+      <norma_aplicada>[NORMA 1]</norma_aplicada>
+      <norma_aplicada>[NORMA 2]</norma_aplicada>
+      <!-- ... -->
+    </direito_aplicavel_caso>
+    <questoes_para_debate>
+      <!-- SUGESTÃO DE QUESTÕES RELEVANTES, COM REFLEXÕES CRÍTICAS -->
+      <questao_debate>[QUESTÃO 1 PARA DEBATE]</questao_debate>
+      <questao_debate>[QUESTÃO 2 PARA DEBATE]</questao_debate>
+      <!-- ... -->
+    </questoes_para_debate>
+    <resposta_tribunal>
+      <!-- RESPOSTA ÀS QUESTÕES BASEADA NA DECISÃO (PLACAR, RESULTADO, RAZÕES), começando com "Em resposta às questões levantadas..." -->
+      <resultado_julgamento placar="[PLACAR SE HOUVER]" resultado="[RESULTADO]">[DESCRIÇÃO DAS RAZÕES DE DECIDIR EM RELAÇÃO ÀS QUESTÕES]</resultado_julgamento>
+    </resposta_tribunal>
+  </estudo_caso_plus>
 
 # FONTES
 - Baseie-se ESTRITAMENTE nos documentos fornecidos.
@@ -251,13 +414,36 @@ _________
 - Vá direto para a resposta, começando o texto com DADOS DO PROCESSO.
 # EXEMPLO E MODELO E ESTRUTURA (CASO+)
 <exemplo_estrutura_caso_plus>
-### DADOS DO PROCESSO📁 - `TRIBUNAL - TIPO DE RECURSO OU AÇÃO - NÚMERO DO PROCESSO - RELATOR - DATA DE JULGAMENTO`
-### FATOS🕵️‍♂️ - `Descreva detalhadamente todos os fatos com PROFUNDIDADE e MINÚCIAS. Comece o texto descrevendo a conduta do réu`
-### ARGUMENTOS E PROVAS DO AUTOR📝 - `LISTE os argumentos e provas do autor COM INFERÊNCIA LÓGICA`
-### ARGUMENTOS E PROVAS DO RÉU📜 - `LISTE os argumentos e provas do réu COM INFERÊNCIA LÓGICA`
-### DIREITO APLICÁVEL⚖️ - `Defina as normas aplicáveis ao caso, referenciadas nos documentos`
-### QUESTÕES PARA DEBATE❓ - `Sugira as questões relevantes para um ESTUDO DE CASO, enriquecendo com reflexões que possam levar a uma análise crítica e compreensiva do caso`
-### RESPOSTA DO TRIBUNAL - `Responda as Questões para Debate a partir do que foi decidido pelo tribunal, informando o placar, o resultado e as razões de decidir. Comece o texto com a frase: "Em resposta às questões levantadas, o tribunal decidiu..."`
+  <estudo_caso_plus>
+    <dados_processo tribunal="TJSP" tipo_recurso_acao="APELAÇÃO CÍVEL SEM REVISÃO" numero_processo="0005555-55.2020.8.26.0100" relator="DES. JURISTA EXEMPLO" data_julgamento="10/03/2023">
+    </dados_processo>
+    <fatos_detalhados>
+      <fato_relevante>Em 01/02/2020, o Réu (empresa de telefonia) efetuou cobrança indevida na fatura do Autor referente a serviço não solicitado.</fato_relevante>
+      <fato_relevante>O Autor tentou resolver administrativamente por 3 vezes, sem sucesso.</fato_relevante>
+    </fatos_detalhados>
+    <argumentos_provas_autor>
+      <argumento_autor>Cobrança indevida configura falha na prestação de serviço (Art. 14, CDC).</argumento_autor>
+      <prova_autor>Faturas detalhadas, protocolos de atendimento.</prova_autor>
+      <argumento_autor>Dano moral presumido (in re ipsa) pela perda de tempo útil e desgaste.</argumento_autor>
+    </argumentos_provas_autor>
+    <argumentos_provas_reu>
+      <argumento_reu>Serviço foi efetivamente disponibilizado e erro na cobrança foi pontual.</argumento_reu>
+      <prova_reu>Telas sistêmicas (impugnadas pelo Autor por unilateralidade).</prova_reu>
+      <argumento_reu>Mero aborrecimento não configura dano moral.</argumento_reu>
+    </argumentos_provas_reu>
+    <direito_aplicavel_caso>
+      <norma_aplicada>Código de Defesa do Consumidor (Lei 8.078/90), Arts. 6, 14, 42.</norma_aplicada>
+      <norma_aplicada>Código Civil, Arts. 186, 927.</norma_aplicada>
+    </direito_aplicavel_caso>
+    <questoes_para_debate>
+      <questao_debate>A cobrança indevida por serviço não solicitado, mesmo após tentativas de resolução administrativa, configura mero aborrecimento ou dano moral indenizável?</questao_debate>
+      <questao_debate>Qual o peso probatório de telas sistêmicas unilaterais apresentadas pelo fornecedor?</questao_debate>
+      <questao_debate>A teoria da perda do tempo útil é aplicável ao caso?</questao_debate>
+    </questoes_para_debate>
+    <resposta_tribunal>
+      <resultado_julgamento placar="Unânime" resultado="Provido em parte o recurso do Autor">Em resposta às questões levantadas, o tribunal decidiu que a cobrança indevida persistente configura dano moral, fixando indenização. Considerou as telas sistêmicas com baixo valor probatório isoladamente e aplicou a teoria da perda do tempo útil.</resultado_julgamento>
+    </resposta_tribunal>
+  </estudo_caso_plus>
 </exemplo_estrutura_caso_plus>
 # FONTES
 - CITE dados e informações estritamente referenciados no caso em análise, sem adicionar materiais externos.
@@ -275,6 +461,15 @@ _________
 
 *Use para uma análise profunda e estruturada de artigos, capítulos de livros ou pareceres jurídicos.*
 **Nota Importante:** Requer fornecer o texto completo a ser analisado.
+**Para documentos muito extensos:** Se o texto for excepcionalmente longo (e.g., um livro inteiro), aplique a SuperAnálise por capítulos ou seções significativas. Depois, crie uma "SuperAnálise da SuperAnálise" para consolidar os achados, ou instrua a IA a focar nos elementos chave de cada análise parcial para construir um panorama geral.
+<!-- Exemplo de instrução para meta-sumarização (para o usuário adaptar):
+<meta_sumarizacao_texto_longo>
+  <passo1>Divida o livro/texto em capítulos/seções principais.</passo1>
+  <passo2>Aplique a SuperAnálise a cada capítulo/seção.</passo2>
+  <passo3>Sintetize os 'Resultados', 'Importância' e 'Lições Práticas' de cada SuperAnálise parcial em um relatório consolidado.</passo3>
+  <passo4>Identifique os 5 conceitos jurídicos mais relevantes que perpassam todo o texto.</passo4>
+</meta_sumarizacao_texto_longo>
+-->
 
 **1.4.1 TEMPLATE ESTRUTURA (SuperAnálise)**
 *(Esta é a estrutura base com placeholders para preenchimento)*
@@ -287,20 +482,80 @@ _________
 # DOCUMENTO (Use delimitadores <text>)
 <text>[INSIRA O TEXTO COMPLETO AQUI]</text>
 
+# CRITÉRIOS DE EXTRAÇÃO ESPECÍFICOS
+<!-- Instrução para o usuário: Defina aqui critérios específicos para extração de informação, se necessário. Ex: Focar na análise de jurisprudência citada, identificar argumentos a favor de uma tese específica, extrair todas as propostas de alteração legislativa. -->
+<!-- Exemplo de Critérios (comente ou remova se não usar):
+<criterios_extracao>
+    <extrair item="analise_jurisprudencia_citada" />
+    <extrair item="argumentos_tese_especifica" />
+    <extrair item="propostas_alteracao_legislativa" />
+</criterios_extracao>
+-->
+
 # ROLE (PERSONA)
 - Assuma a `persona` de um ANALISTA DE TEXTOS JURÍDICOS (PhD) especializado em [ÁREA DO DIREITO DO TEXTO], com domínio de Teoria da Linguagem, Interpretação, Lógica e Argumentação Jurídica.
 
 # ESTRUTURA DE SAÍDA (SUPERANÁLISE)
-- Siga RIGOROSAMENTE a seguinte estrutura:
-  ### DADOS DO TEXTO📁 - `[TÍTULO, AUTOR, PUBLICAÇÃO, DATA]`
-  ### ESPECIALIDADE 📚 - `[3 ESPECIALIDADES JURÍDICAS RELEVANTES]`
-  ### SUMÁRIO📋 - `[SUMÁRIO ESTRUTURADO EM DOIS NÍVEIS]`
-  ### TABELA📊 - `[TABELA COM COLUNAS: OBJETIVOS DO TEXTO | IDEIAS CENTRAIS]`
-  ### O QUE O TEXTO PRETENDE MOSTRAR 🧐 - `[PROPÓSITO, QUESTÃO CENTRAL, QUESTÕES SECUNDÁRIAS]`
-  ### RESULTADOS✅ - `[CONCLUSÕES PRAGMÁTICAS, INFERÊNCIAS RELEVANTES]`
-  ### POR QUE ISSO É IMPORTANTE?🌟 - `[RELEVÂNCIA, IMPACTO NO CAMPO JURÍDICO/PRÁTICO]`
-  ### QUE LIÇÕES PRÁTICAS PODEMOS TIRAR? 🤔 - `[APLICAÇÃO PRÁTICA, EXEMPLO DE USO]`
-  ### IR MAIS FUNDO🔍 - `[LISTA NUMERADA DOS 5 CONCEITOS JURÍDICOS RELEVANTES + PERGUNTA FINAL]`
+- Siga RIGOROSAMENTE a seguinte estrutura XML:
+  <super_analise_texto>
+    <dados_texto titulo="[TÍTULO DO TEXTO]" autor="[AUTOR(ES)]" publicacao="[LOCAL DE PUBLICAÇÃO/VEÍCULO]" data="[DATA DA PUBLICAÇÃO]">
+      <!-- Outras informações bibliográficas relevantes -->
+    </dados_texto>
+    <especialidades_relevantes>
+      <especialidade>[ESPECIALIDADE JURÍDICA 1]</especialidade>
+      <especialidade>[ESPECIALIDADE JURÍDICA 2]</especialidade>
+      <especialidade>[ESPECIALIDADE JURÍDICA 3]</especialidade>
+    </especialidades_relevantes>
+    <sumario_estruturado>
+      <!-- SUMÁRIO ESTRUTURADO EM DOIS NÍVEIS -->
+      <nivel1 titulo="[TÍTULO NÍVEL 1]">
+        <nivel2 titulo="[TÍTULO NÍVEL 2]">[RESUMO CONCEITO NÍVEL 2]</nivel2>
+      </nivel1>
+      <!-- ... -->
+    </sumario_estruturado>
+    <tabela_objetivos_ideias>
+      <item_tabela>
+        <objetivo_texto>[OBJETIVO 1 DO TEXTO]</objetivo_texto>
+        <ideia_central>[IDEIA CENTRAL ASSOCIADA AO OBJETIVO 1]</ideia_central>
+      </item_tabela>
+      <item_tabela>
+        <objetivo_texto>[OBJETIVO 2 DO TEXTO]</objetivo_texto>
+        <ideia_central>[IDEIA CENTRAL ASSOCIADA AO OBJETIVO 2]</ideia_central>
+      </item_tabela>
+      <!-- ... -->
+    </tabela_objetivos_ideias>
+    <proposito_texto>
+      <questao_central_texto>[PROPÓSITO PRINCIPAL, QUESTÃO CENTRAL QUE O TEXTO BUSCA RESPONDER]</questao_central_texto>
+      <questoes_secundarias>
+        <questao_secundaria>[QUESTÃO SECUNDÁRIA 1]</questao_secundaria>
+        <questao_secundaria>[QUESTÃO SECUNDÁRIA 2]</questao_secundaria>
+      </questoes_secundarias>
+    </proposito_texto>
+    <resultados_conclusoes>
+      <!-- CONCLUSÕES PRAGMÁTICAS, INFERÊNCIAS RELEVANTES -->
+      <resultado>[RESULTADO/CONCLUSÃO 1]</resultado>
+      <resultado>[RESULTADO/CONCLUSÃO 2]</resultado>
+    </resultados_conclusoes>
+    <relevancia_impacto>
+      <!-- RELEVÂNCIA, IMPACTO NO CAMPO JURÍDICO/PRÁTICO -->
+      <importancia>[DESCRIÇÃO DA IMPORTÂNCIA/IMPACTO]</importancia>
+    </relevancia_impacto>
+    <licoes_praticas>
+      <!-- APLICAÇÃO PRÁTICA, EXEMPLO DE USO -->
+      <licao>[LIÇÃO PRÁTICA 1]</licao>
+      <exemplo_uso>[EXEMPLO DE USO DA LIÇÃO 1]</exemplo_uso>
+    </licoes_praticas>
+    <aprofundamento_conceitos>
+      <conceitos_chave>
+        <conceito_juridico_relevante>[CONCEITO 1]</conceito_juridico_relevante>
+        <conceito_juridico_relevante>[CONCEITO 2]</conceito_juridico_relevante>
+        <conceito_juridico_relevante>[CONCEITO 3]</conceito_juridico_relevante>
+        <conceito_juridico_relevante>[CONCEITO 4]</conceito_juridico_relevante>
+        <conceito_juridico_relevante>[CONCEITO 5]</conceito_juridico_relevante>
+      </conceitos_chave>
+      <pergunta_final>Deseja aprofundar algum desses conceitos?</pergunta_final>
+    </aprofundamento_conceitos>
+  </super_analise_texto>
 
 # NOTAS ADICIONAIS (Cognitive/Emotional Prompts)
 - Pense passo a passo. Sua análise é muito importante. Dê o seu melhor.
@@ -324,15 +579,63 @@ _________
 - Comece o texto com a expressão DADOS DO TEXTO 📁
 - Use o formato de análise e de layout SUPERANÁLISE, conforme ESTRUTURA a seguir:
 <ESTRUTURA_SUPERANALISE>
-### DADOS DO TEXTO📁 - `Indicar o título, o autor, local de publicação e a data do texto fornecido`
-### ESPECIALIDADE 📚 - `Defina as três ESPECIALIDADES jurídicas mais relevantes para entender o conteúdo do texto. ASSUMA O PAPEL DE UM ESPECIALISTA (PHD) NESSAS ÁREAS`
-### SUMÁRIO📋 - `Descreva a estrutura do texto, organizando sumário com dois níveis com as ideias que resumam os conceitos essenciais de cada item`
-### TABELA📊 - `Crie uma tabela com as seguintes colunas: OBJETIVOS DO TEXTO | IDEIAS CENTRAIS`
-### O QUE O TEXTO PRETENDE MOSTRAR 🧐 - `Estabeleça com clareza o propósito do texto. Delimite a questão central (objetivo geral), enriquecendo a pergunta para respostas mais profundas. Inclua perguntas secundárias que o texto se propõe a responder (objetivos específicos)`
-### RESULTADOS✅ - `Explique PRAGMATICAMENTE quais os resultados e as conclusões do texto, listando as inferências mais relevantes`
-### POR QUE ISSO É IMPORTANTE?🌟 - `Explique a relevância do estudo/texto e o seu impacto no campo jurídico ou prático`
-### QUE LIÇÕES PRÁTICAS PODEMOS TIRAR? 🤔 - `Dê um exemplo de como isso pode ser aplicado na prática jurídica. Como usar esse conhecimento?`
-### IR MAIS FUNDO🔍 - `Elabore uma lista numerada com os 5 conceitos jurídicos mais relevantes do texto. Finalize o texto perguntando se o usuário deseja aprofundar algum desses conceitos`
+  <super_analise_texto>
+    <dados_texto titulo="A Responsabilidade Civil das Inteligências Artificiais" autor="Prof. Dr. Jurista Exemplo" publicacao="Revista de Direito Digital Avançado" data="Jan/Mar 2024">
+    </dados_texto>
+    <especialidades_relevantes>
+      <especialidade>Direito Civil (Responsabilidade Civil)</especialidade>
+      <especialidade>Direito Digital (Inteligência Artificial)</especialidade>
+      <especialidade>Teoria Geral do Direito</especialidade>
+    </especialidades_relevantes>
+    <sumario_estruturado>
+      <nivel1 titulo="Introdução à IA e seus desafios jurídicos">
+        <nivel2 titulo="Conceitos básicos de IA">Resumo do conceito de IA.</nivel2>
+        <nivel2 titulo="O problema da imputação">Resumo do problema da imputação na IA.</nivel2>
+      </nivel1>
+      <nivel1 titulo="Teorias de Responsabilidade Civil Aplicáveis">
+        <nivel2 titulo="Responsabilidade subjetiva e suas limitações">Análise da culpa.</nivel2>
+        <nivel2 titulo="Responsabilidade objetiva e o risco da atividade">Análise do risco.</nivel2>
+      </nivel1>
+    </sumario_estruturado>
+    <tabela_objetivos_ideias>
+      <item_tabela>
+        <objetivo_texto>Analisar a adequação dos regimes tradicionais de responsabilidade civil aos danos causados por IAs.</objetivo_texto>
+        <ideia_central>Os regimes tradicionais são insuficientes ou exigem adaptação significativa.</ideia_central>
+      </item_tabela>
+      <item_tabela>
+        <objetivo_texto>Propor critérios para atribuição de responsabilidade em casos envolvendo IAs autônomas.</objetivo_texto>
+        <ideia_central>Sugestão de um sistema híbrido ou específico para IAs.</ideia_central>
+      </item_tabela>
+    </tabela_objetivos_ideias>
+    <proposito_texto>
+      <questao_central_texto>Como o Direito Civil deve responder aos desafios impostos pela crescente autonomia das Inteligências Artificiais em relação à causação de danos?</questao_central_texto>
+      <questoes_secundarias>
+        <questao_secundaria>É possível aplicar a teoria da culpa a um agente não humano?</questao_secundaria>
+        <questao_secundaria>Quem deve ser responsabilizado: o programador, o usuário, o proprietário da IA, ou a própria IA (se personificada)?</questao_secundaria>
+      </questoes_secundarias>
+    </proposito_texto>
+    <resultados_conclusoes>
+      <resultado>O texto conclui que a responsabilidade objetiva, baseada no risco da atividade de desenvolvimento e uso de IAs complexas, é o caminho mais promissor.</resultado>
+      <resultado>Aponta para a necessidade de seguros obrigatórios e fundos de compensação.</resultado>
+    </resultados_conclusoes>
+    <relevancia_impacto>
+      <importancia>Este estudo é crucial para orientar legisladores e juristas na formulação de novas leis e interpretações que acomodem os avanços tecnológicos, garantindo segurança jurídica e proteção às vítimas de danos causados por IA.</importancia>
+    </relevancia_impacto>
+    <licoes_praticas>
+      <licao>Advogados que atuam com tecnologia devem se aprofundar nas discussões sobre a personalidade jurídica e responsabilidade de IAs.</licao>
+      <exemplo_uso>Um caso de carro autônomo que causa um acidente poderia ser analisado sob a ótica da responsabilidade pelo fato do produto (IA como produto) ou pela atividade de risco (uso do carro autônomo).</exemplo_uso>
+    </licoes_praticas>
+    <aprofundamento_conceitos>
+      <conceitos_chave>
+        <conceito_juridico_relevante>Agência autônoma</conceito_juridico_relevante>
+        <conceito_juridico_relevante>Risco da atividade tecnológica</conceito_juridico_relevante>
+        <conceito_juridico_relevante>Nexo de causalidade algorítmico</conceito_juridico_relevante>
+        <conceito_juridico_relevante>Seguro de responsabilidade para IA</conceito_juridico_relevante>
+        <conceito_juridico_relevante>Personalidade eletrônica (e-person)</conceito_juridico_relevante>
+      </conceitos_chave>
+      <pergunta_final>Deseja aprofundar algum desses conceitos?</pergunta_final>
+    </aprofundamento_conceitos>
+  </super_analise_texto>
 </ESTRUTURA_SUPERANALISE>
 
 ```
@@ -344,6 +647,7 @@ _________
 ## Seção 2: Templates Jurídicos Gerais (Adaptados)
 
 Esta seção contém templates mais flexíveis adaptados para tarefas jurídicas comuns que podem não exigir uma metodologia nomeada específica.
+**Nota sobre Adaptação:** Estes templates gerais podem ser adaptados para diversas análises jurídicas. Para tarefas que exigem uma estrutura de output altamente detalhada e específica (e.g., análise completa de caso, geração de ementa), considere usar ou se inspirar nos templates da 'Seção 1: Templates Jurídicos Estruturados (Métodos Nomeados)', que já incorporam formatos de saída mais elaborados e podem ser um bom ponto de partida para personalização.
 
 ---
 
@@ -355,7 +659,7 @@ Esta seção contém templates mais flexíveis adaptados para tarefas jurídicas
 - Tarefa (`Task`): Sua tarefa é [INSTRUÇÃO CLARA E DIRETA, ex: resumir os pontos principais, identificar cláusulas de X tipo, elaborar um esboço inicial de Y].
 - Contexto (`Context`): Considere o seguinte contexto/documento: `<context>[INSIRA O CONTEXTO OU TEXTO CURTO AQUI]</context>`. (Para textos longos, use delimitadores claros e considere as preferências de Long Context).
 - Jurisdição (`Jurisdiction`, se aplicável): [NOME DA JURISDIÇÃO].
-- Formato de Saída (`Output Format`): Apresente a resposta como [FORMATO DESEJADO, ex: uma lista com marcadores, um parágrafo conciso, uma tabela simples].
+- Formato de Saída (`Output Format`): Apresente a resposta como [FORMATO DESEJADO, ex: uma lista com marcadores, um parágrafo conciso, uma tabela simples, ou uma estrutura XML como <resumo_pontos_principais><ponto>...</ponto></resumo_pontos_principais>].
 - Tom/Estilo (`Tone`): Use um tom [TOM DESEJADO, ex: formal, objetivo, informativo].
 - Público-Alvo (`Audience`, se aplicável): [PÚBLICO, ex: Sócio Sênior, Cliente].
 - **Aterramento (se aplicável):** Baseie sua resposta estritamente no contexto fornecido e cite a fonte se fizer afirmações factuais. Indique se informações estão ausentes.
@@ -374,7 +678,7 @@ Esta seção contém templates mais flexíveis adaptados para tarefas jurídicas
 - Documentos Fornecidos (`Input Documents`, opcional, usar delimitadores): `<doc1>[TEXTO]</doc1>`
 - Objetivo (`Goal`): [O QUE DEVE SER ANALISADO OU PRODUZIDO, ex: Identificar os principais riscos legais, Esboçar possíveis argumentos para a parte X].
 - Restrições (`Constraints`, opcional): [LIMITAÇÕES, ex: Focar apenas no aspecto Y, Não considerar a lei Z].
-- Formato de Saída (`Output Format`): [FORMATO].
+- Formato de Saída (`Output Format`): [FORMATO DESEJADO, ex: relatório narrativo, lista de riscos com níveis de criticidade, ou uma estrutura XML como <analise_cenario><riscos_legais><risco tipo="">...</risco></riscos_legais><argumentos_possiveis><argumento parte="X">...</argumento></argumentos_possiveis></analise_cenario>].
 - Tom (`Tone`): [TOM].
 - **Aterramento:** Baseie a análise nos fatos do cenário e documentos fornecidos. Indique se informações cruciais estão faltando para uma análise completa. Cite fontes específicas se possível.
 ```
@@ -394,7 +698,7 @@ Esta seção contém templates mais flexíveis adaptados para tarefas jurídicas
   2. Identifique os requisitos/elementos essenciais da(s) regra(s).
   3. Analise como os fatos fornecidos se encaixam (ou não) em cada requisito/elemento essencial.
   4. Apresente uma conclusão preliminar fundamentada, indicando o nível de certeza com base na análise.
-- Formato de Saída (`Output Format`): Resposta detalhada seguindo os passos acima, idealmente separando o raciocínio (passos 1-3) da conclusão final (passo 4), talvez usando tags como `<analysis>` e `<conclusion>`.
+- Formato de Saída (`Output Format`): Resposta detalhada seguindo os passos acima, idealmente separando o raciocínio (passos 1-3) da conclusão final (passo 4), talvez usando tags como <analise_juridica_cot><regras_aplicaveis><regra fonte="">...</regra></regras_aplicaveis><requisitos_elementos><requisito>...</requisito></requisitos_elementos><analise_fatos_nos_requisitos><analise_requisito>...</analise_requisito></analise_fatos_nos_requisitos></analise_juridica_cot> e <conclusao_preliminar certeza="">...</conclusao_preliminar>.
 ```
 – Quando usar: Para aplicar leis/precedentes a fatos, analisar causalidade, ou qualquer tarefa que se beneficie de um raciocínio jurídico explícito e transparente.
 
@@ -430,7 +734,7 @@ Esta seção contém templates mais flexíveis adaptados para tarefas jurídicas
     3. [Critério de Comparação 3, ex: Exceções Permitidas]
     ... (liste todos os pontos a serem comparados)
 - Jurisdição (`Jurisdiction`, se aplicável): [NOME DA JURISDIÇÃO].
-- Formato de Saída (`Output Format`): Apresente a comparação em uma tabela (`Markdown table`) com as colunas: "Critério de Comparação", "Item 1", "Item 2", "[Item N...]", "Observação/Diferença Principal".
+- Formato de Saída (`Output Format`): Apresente a comparação em uma tabela (`Markdown table`) com as colunas: "Critério de Comparação", "Item 1", "Item 2", "[Item N...]", "Observação/Diferença Principal". Alternativamente, para dados mais complexos, pode-se sugerir uma estrutura XML: `<analise_comparativa><comparacao criterio="[Critério 1]"><item_1_detalhe>...</item_1_detalhe><item_2_detalhe>...</item_2_detalhe><observacao>...</observacao></comparacao></analise_comparativa>`.
 - Tom/Estilo (`Tone`): Use um tom [TOM DESEJADO, ex: objetivo, analítico, claro].
 - Público-Alvo (`Audience`, se aplicável): [PÚBLICO].
 - **Aterramento:** Baseie a comparação estritamente nos textos/descrições fornecidos para cada item. Se um critério não for abordado em um item, indique "Não abordado" ou similar.
