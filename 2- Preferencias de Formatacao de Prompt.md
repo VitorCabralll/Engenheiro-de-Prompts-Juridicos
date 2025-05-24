@@ -38,7 +38,31 @@ Estas diretrizes garantem clareza, consistencia e estrutura apropriada ao public
     - **Formato (`Output Format`):** A estrutura de saída necessária (ex: lista, tabela, **formato jurídico específico como FIRAC, Ementa CNJ, CASO+, Análise de Cláusula**).
     - **Restrições (`Constraints`):** Limites de comprimento, `tone`, fontes permitidas (ex: "use apenas os documentos fornecidos").
 - Use `Markdown` (#, ##, *, 1.) para criar hierarquia e organização dentro do `prompt`, se necessário.
-- Ao lidar com **documentos de entrada muito extensos** (ex: >20k tokens), considere instruir o prompt gerado a posicionar o texto principal no início, antes das instruções detalhadas, e, opcionalmente, solicitar extração prévia de citações relevantes para otimizar o processamento de 'long context'.
+
+---
+
+🏷️ Uso de Tags XML para Saídas Estruturadas
+
+- O uso de tags XML (ex: `<resumo_caso>`, `<partes_envolvidas>`, `<decisao_principal`) é crucial para gerar outputs que podem ser facilmente parseados e utilizados em outros sistemas ou para análises programáticas.
+- Ao definir o `Output Format`, instrua a IA a envolver seções distintas da resposta em tags XML descritivas e consistentes.
+- Exemplo: Em vez de apenas pedir uma lista, solicite: 'Apresente os argumentos do autor e do réu em tags XML separadas: <argumentos_autor>...</argumentos_autor> e <argumentos_reu>...</argumentos_reu>'.
+- Consulte os templates em `4- Templates e Exemplos.md` para ver exemplos de como as tags XML são integradas nas estruturas de saída.
+- Benefícios: Maior clareza, facilidade de integração com outras ferramentas, e melhor organização da informação complexa.
+
+---
+
+🪓 Chunking e Meta-Sumarização de Documentos Extensos
+
+- Documentos jurídicos podem ser extremamente longos (e.g., petições extensas, processos completos, grandes contratos). Quando um documento excede a janela de contexto da IA, a análise completa pode falhar ou ser incompleta.
+- Ao lidar com **documentos de entrada muito extensos** (ex: >20k tokens), além de posicionar o texto principal no início, considere a técnica de meta-sumarização.
+- **Técnica de Meta-Sumarização (Anthropic):**
+    - 1. **Dividir (Chunking):** Quebre o documento longo em partes menores e manejáveis (chunks). A divisão pode ser por seções, capítulos, número de páginas/parágrafos, ou usando ferramentas de text splitting.
+    - 2. **Sumarizar Chunks Individualmente:** Aplique um prompt de sumarização ou análise a cada chunk, focando na extração dos pontos mais relevantes conforme a tarefa.
+    - 3. **Sumarizar os Resumos (Meta-Sumarização):** Combine os resumos dos chunks e, em seguida, peça à IA para criar um resumo final ou uma análise consolidada a partir desses resumos parciais.
+- Ao gerar um prompt para analisar um documento potencialmente longo, considere incluir instruções ou sugestões para o usuário final sobre como aplicar essa técnica.
+- Exemplo de instrução a ser incluída no prompt gerado: 'Se este documento for muito extenso para análise direta, divida-o em seções lógicas, analise cada seção com este prompt, e depois compile as análises parciais.'
+- Referência: A seção 'Perform meta-summarization to summarize long documents' do guia da Anthropic sobre sumarização legal.
+
 
 ---
 
@@ -77,6 +101,19 @@ Estas diretrizes garantem clareza, consistencia e estrutura apropriada ao public
 - Certifique-se de que `[STYLE] Tag` (se usada) + `Tone` + `Structure` + `Scope` + `Audience` estejam alinhados e consistentes dentro do mesmo `prompt`.
 - Na dúvida, **especifique mais, não menos**, especialmente em tarefas jurídicas complexas.
 - **Priorize clareza e estrutura** ao lidar com análises legais complexas ou grandes volumes de texto (`input`).
+
+---
+
+🔄 Adaptação para Diferentes Modelos de IA (Claude, ChatGPT, Gemini)
+
+- Diferentes modelos de IA (ex: Claude, ChatGPT, Gemini) podem ter nuances em como interpretam instruções, o tamanho de suas janelas de contexto, e a verbosidade de suas respostas.
+- **Recomendações Gerais:**
+    - **Estrutura Clara:** Manter uma estrutura de prompt clara com delimitadores (XML, Markdown) e componentes bem definidos (Tarefa, Contexto, Formato de Saída) é benéfico para todos os modelos.
+    - **Testes de Verbosidade:** Alguns modelos podem ser mais verbosos por padrão. Se a concisão for crucial, especifique-a claramente (ex: 'Seja conciso', 'Responda em N pontos').
+    - **Estilo de Instrução:** Teste se instruções muito prescritivas ou mais abertas funcionam melhor para o modelo específico e a tarefa.
+    - **Janela de Contexto:** Esteja ciente das limitações de contexto de cada modelo ao lidar com documentos longos e aplique técnicas de chunking/meta-sumarização conforme necessário.
+    - **Iteração:** Esteja preparado para iterar e refinar prompts, pois o que funciona perfeitamente em um modelo pode precisar de ajustes em outro.
+- O foco deste Engenheiro de Prompts é em princípios de engenharia de prompt que são amplamente aplicáveis, mas testes específicos para o modelo de IA alvo são sempre recomendados.
 
 ---
 # Atualizado em: 03/05/25
