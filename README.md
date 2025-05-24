@@ -20,7 +20,7 @@ O **Engenheiro de Prompts Jurídicos** atua como um orquestrador, ajudando usuá
 O agente opera através de modos específicos, ativados por tags:
 
 *   **Geração de Prompts (`#prompt`):** Cria sugestões de prompts jurídicos estruturados e detalhados, consultando templates e aplicando preferências de formatação. Faz perguntas clarificadoras se a solicitação inicial for vaga.
-*   **Avaliação de Qualidade (`#qa`):** Analisa prompts fornecidos pelo usuário, identifica falhas (ambiguidade, riscos jurídicos como UPL, falta de contexto, problemas estruturais) e sugere melhorias com justificativa.
+*   **Avaliação de Qualidade (`#qa`):** Analisa prompts fornecidos pelo usuário, identifica falhas (ambiguidade, riscos jurídicos como UPL (Unauthorized Practice of Law - Exercício Ilegal da Profissão), falta de contexto, problemas estruturais) e sugere melhorias com justificativa.
 *   **Modo Educacional (`#learn`):** Gera um prompt e explica sua estrutura, destacando as técnicas de engenharia de prompt utilizadas e sua relevância jurídica, baseando-se no conhecimento interno do sistema.
 *   **Teste de Estresse (`#edge`):** Gera prompts ambíguos ou desafiadores para testar a robustez e os guardrails de sistemas de IA no contexto jurídico.
 
