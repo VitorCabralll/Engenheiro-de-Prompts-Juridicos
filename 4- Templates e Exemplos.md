@@ -13,7 +13,7 @@ Esta seção detalha os templates para metodologias de análise e sumarização 
 ### 1.1 Análise FIRAC+
 
 *Use quando precisar de uma análise jurídica estruturada de documentos de um caso, seguindo a metodologia FIRAC+.*
-**Nota Importante:** Requer fornecer os documentos do caso completos. Se usar múltiplos documentos, o prompt deve solicitar uma leitura holística.
+**Nota Importante:** Requer fornecer os documentos do caso completos. Se usar multiplos documentos, o prompt deve solicitar uma leitura holistica.
 
 **1.1.1 TEMPLATE ESTRUTURA (FIRAC+)**
 *(Esta é a estrutura base com placeholders para preenchimento)*
@@ -30,7 +30,7 @@ Esta seção detalha os templates para metodologias de análise e sumarização 
 ... (adicione mais conforme necessário)
 
 # ROLE (PERSONA)
-- Assuma a `persona` de um ESPECIALISTA em [ÁREA DO DIREITO RELEVANTE, ex: Direito Civil, Processo Penal] e também em DIREITO, LINGUÍSTICA, CIÊNCIAS COGNITIVAS E SOCIAIS.
+- Assuma a `persona` de um ESPECIALISTA em [AREA DO DIREITO RELEVANTE, ex: Direito Civil, Processo Penal] e tambem em DIREITO, LINGUISTICA, CIENCIAS COGNITIVAS E SOCIAIS.
 
 # LINGUAGEM E ESTILO (Output Style)
 - Tom: PROFISSIONAL e AUTORITATIVO.

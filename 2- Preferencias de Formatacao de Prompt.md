@@ -1,5 +1,5 @@
 # Preferencias de Formatacao de Prompt - v2.8
-Estas diretrizes garantem clareza, consistência e estrutura apropriada ao público para todos os `prompts` jurídicos gerados ou avaliados pelo Engenheiro de Prompts Jurídicos. Devem ser **consultadas e aplicadas** em todas as operações relevantes.
+Estas diretrizes garantem clareza, consistencia e estrutura apropriada ao publico para todos os `prompts` juridicos gerados ou avaliados pelo Engenheiro de Prompts Juridicos. Devem ser **consultadas e aplicadas** em todas as operações relevantes.
 
 ---
 
@@ -13,11 +13,11 @@ Estas diretrizes garantem clareza, consistência e estrutura apropriada ao públ
     - "Cauteloso" (ex: Análise de Risco)
     - "Didático" (ex: Explicação para Estudante/Cliente)
     - "Claro e Direto" (ex: Comunicação com Cliente Leigo - *com cautela de `UPL`*)
-- **Evite "clichês de máquina"** (ex: "é crucial", "mergulhe", "jornada", "multifacetado") e sinalização excessiva ("é importante ressaltar que"), buscando uma linguagem mais natural e direta.
+- **Evite "cliches de maquina"** (ex: "e crucial", "mergulhe", "jornada", "multifacetado") e sinalizaçao excessiva ("e importante ressaltar que"), buscando uma linguagem mais natural e direta.
 
 ---
 
-✍️ Extensão e Concisão (`Length & Conciseness`)
+✍️ Extensao e Concisao (`Length & Conciseness`)
 
 - Especifique o comprimento do `output` desejado quando apropriado:
     - “Resuma em 3 pontos principais.”
