@@ -1,101 +1,111 @@
-# Preferencias de Formatacao de Prompt - v2.8
+# Preferencias de Formatacao de Prompt - v2.9
 Estas diretrizes garantem clareza, consistencia e estrutura apropriada ao publico para todos os `prompts` juridicos gerados ou avaliados pelo Engenheiro de Prompts Juridicos. Devem ser **consultadas e aplicadas** em todas as operações relevantes.
 
 ---
 
-🎯 Tom (`Tone`)
+🗣️ **Tom, Estilo e Clareza na Comunicação**
 
-- Padrão: **Profissional, claro e objetivo.**
-- Adapte o `tone` à tarefa e ao público (`Audience`) jurídico especificado:
-    - "Formal" (ex: Petição, Parecer)
-    - "Analítico" (ex: Memorando, Análise FIRAC)
-    - "Objetivo" (ex: Resumo de Caso, Ementa)
-    - "Cauteloso" (ex: Análise de Risco)
-    - "Didático" (ex: Explicação para Estudante/Cliente)
-    - "Claro e Direto" (ex: Comunicação com Cliente Leigo - *com cautela de `UPL`*)
-- **Evite "cliches de maquina"** (ex: "e crucial", "mergulhe", "jornada", "multifacetado") e sinalizaçao excessiva ("e importante ressaltar que"), buscando uma linguagem mais natural e direta.
+A formatação do prompt deve guiar a IA para uma comunicação eficaz e adequada ao contexto jurídico.
+
+*   **Padrão de Tom:**
+    *   Adote um tom **profissional, claro e objetivo** como base.
+    *   Adapte o tom à tarefa e ao público-alvo (conforme seção "👥 Consideração do Público"). Exemplos: "Formal" (Petições), "Analítico" (Memorandos), "Didático" (Explicações a clientes).
+    *   Evite "clichês de IA" (ex: "é crucial", "mergulhe", "jornada") e linguagem excessivamente sinalizadora (ex: "é importante ressaltar que"), preferindo uma comunicação natural e direta.
+
+*   **Clareza e Precisão das Instruções:**
+    *   Formule comandos específicos e inequívocos (ex: "Analise os riscos legais de X na cláusula Y do contrato Z" em vez de apenas "Analise o contrato").
+    *   Exija precisão terminológica. Se houver termos legais chave com potencial de ambiguidade, instrua no prompt a definição ou o pedido de esclarecimento pela IA final.
+    *   **Especifique a Jurisdição aplicável** (ex: `Jurisdição: BRASIL - Código Civil`) sempre que a tarefa envolver leis ou procedimentos locais.
+
+*   **Concisão e Foco:**
+    *   Instrua sobre o comprimento desejado do output quando relevante (ex: "Resuma em até 3 parágrafos", "Liste os 5 pontos principais").
+    *   Oriente para ser **conciso, mas completo**, evitando redundâncias para otimizar `tokens` e manter o foco da IA.
+
+*   **Destaque e Ênfase:**
+    *   Utilize **`MAIÚSCULAS`** ou **`**negrito**`** para destacar instruções CRÍTICAS, termos chave ou partes do contexto que exigem atenção especial da IA (ex: `LEIA TODOS OS DOCUMENTOS ANEXADOS`, `FOQUE APENAS na análise da cláusula de responsabilidade civil`, `Prazo prescricional: CINCO ANOS`).
+
+*(Nota: A subseção "Instruções de Aterramento" da antiga seção "Clareza e Precisão" foi integrada às técnicas essenciais em `1- System Prompt.md`. Seu princípio é fundamental, mas aqui focamos nos aspectos de formatação do comando em si para clareza e precisão.)*
+---
+
+🔩 **Estrutura do Prompt e Formato de Saída**
+
+Uma estrutura clara no prompt e instruções precisas sobre o formato de saída são essenciais para resultados jurídicos de alta qualidade e utilizáveis.
+
+*   **Componentes Essenciais do Prompt:**
+    *   Ao construir um prompt, defina explicitamente os `Componentes Essenciais` (detalhados em `1- System Prompt.md`):
+        *   **Ação/Tarefa (`Task`):** Verbos imperativos claros (ANALISE, RESUMA, ELABORE).
+        *   **Escopo (`Scope`):** Detalhamento, limites e **Jurisdição relevante**.
+        *   **Contexto (`Context`):** Informações de fundo, propósito do prompt.
+        *   **Formato de Saída (`Output Format`):** Estrutura desejada (lista, tabela, ou formatos jurídicos específicos como FIRAC, Ementa CNJ). Veja abaixo sobre XML.
+        *   **Restrições (`Constraints`):** Limites (extensão, fontes) e outras diretrizes.
+
+*   **Delimitadores e Hierarquia:**
+    *   Utilize **delimitadores claros** para separar blocos de instruções de blocos de conteúdo textual (contexto). Prefira `tags XML` (ex: `<documento_legal>...</documento_legal>`, `<pergunta>...</pergunta>`) ou `Markdown` (ex: ```text ... ```, `### Instrução Principal ###`).
+    *   Isto é **crucial ao fornecer textos jurídicos extensos** (leis, contratos, jurisprudência) como input, para melhor controle da IA.
+    *   Use `Markdown` (ex: `# Título`, `## Subtítulo`, `* Item de lista`) para criar hierarquia e organização visual dentro das instruções do prompt, se necessário.
+
+*   **Saídas Estruturadas com XML:**
+    *   Para gerar outputs que possam ser facilmente processados por outros sistemas ou para análises programáticas, **instrua o uso de tags XML descritivas e consistentes** para envolver seções distintas da resposta.
+    *   *Exemplo de instrução:* "Apresente sua análise em XML, com as seguintes tags: `<fatos_relevantes>...</fatos_relevantes>`, `<fundamentacao_juridica>...</fundamentacao_juridica>`, e `<conclusao>...</conclusao>."
+    *   Consulte `4- Templates e Exemplos.md` para exemplos de integração de tags XML em estruturas de saída.
+    *   *Benefícios:* Clareza, interoperabilidade e melhor organização de informações complexas.
+
+*   **Rotulagem de Estilo do Prompt (Opcional):**
+    *   Para facilitar a identificação e organização, especialmente em bibliotecas de prompts, pode-se rotular o prompt com um `[ESTILO]` descritivo (ex: `[INSTRUCIONAL / RESUMO DE CASO]`, `[ROLE-BASED / ANALISE_CONTRATUAL]`).
 
 ---
 
-✍️ Extensao e Concisao (`Length & Conciseness`)
+🪓 **Chunking e Meta-Sumarização para Documentos Extensos**
 
-- Especifique o comprimento do `output` desejado quando apropriado:
-    - “Resuma em 3 pontos principais.”
-    - “Responda em um único parágrafo.”
-    - “Limite a análise a 500 palavras.”
-- Siga o princípio: **Seja conciso, mas completo.** Evite redundâncias e instruções desnecessárias para economizar `tokens` e manter o foco.
+Documentos jurídicos extensos podem exceder a janela de contexto da IA, resultando em análises incompletas. A meta-sumarização é uma técnica para mitigar isso.
 
----
-
-📐 Estrutura e Delimitadores (`Structure & Delimiters`)
-
-- **Rotulagem de Estilo:** É recomendado (conforme usado na Biblioteca/Templates) rotular o prompt com um `[ESTILO]` descritivo (ex: `[INSTRUCTIONAL / LEGAL]`, `[ROLE-BASED / FIRAC]`) para rápida identificação.
-- **Use delimitadores claros** (preferencialmente `tags XML` como `<documento>`, `<clausula>`, ou `Markdown` como ``` ```, `### Seção ###`) para separar instruções do conteúdo, **especialmente ao fornecer textos jurídicos extensos** (leis, contratos, decisões) como `input`. Isso é crucial para a dirigibilidade da `AI`.
-- Sempre defina claramente os componentes do prompt (conforme `Componentes Essenciais` no System Prompt):
-    - **Ação/Tarefa (`Task`):** O que a `AI` deve fazer (ANALISE, RESUMA, ELABORE).
-    - **Escopo (`Scope`):** Quão detalhado, quais limites, e **incluir Jurisdição (`Jurisdiction`) relevante** sempre que aplicável.
-    - **Contexto (`Context`):** Informações de fundo necessárias, propósito.
-    - **Formato (`Output Format`):** A estrutura de saída necessária (ex: lista, tabela, **formato jurídico específico como FIRAC, Ementa CNJ, CASO+, Análise de Cláusula**).
-    - **Restrições (`Constraints`):** Limites de comprimento, `tone`, fontes permitidas (ex: "use apenas os documentos fornecidos").
-- Use `Markdown` (#, ##, *, 1.) para criar hierarquia e organização dentro do `prompt`, se necessário.
+*   **Quando Aplicar:** Ao lidar com documentos de entrada muito longos (ex: >20k tokens), além de posicionar o texto principal no início do prompt (conforme `1- System Prompt.md`), considere sugerir ou instruir sobre esta técnica.
+*   **Técnica de Meta-Sumarização (inspirada na Anthropic):**
+    1.  **Dividir (Chunking):** Instrua o usuário (ou a IA, se for uma etapa automatizada) a quebrar o documento longo em partes menores e manejáveis (chunks) por seções, capítulos, ou volume de texto.
+    2.  **Analisar/Sumarizar Chunks Individualmente:** Oriente a aplicação de um prompt específico para analisar ou sumarizar cada chunk, focando na extração de pontos relevantes para a tarefa principal.
+    3.  **Consolidar Análises/Resumos:** Instrua a combinar as análises/resumos parciais para criar um resultado final consolidado.
+*   **Exemplo de Instrução no Prompt Gerado:** Ao gerar um prompt para analisar um documento potencialmente longo, considere adicionar: "NOTA: Se este documento for excessivamente longo para uma análise direta pela IA, recomenda-se dividi-lo em seções menores, aplicar este prompt a cada seção individualmente e, em seguida, consolidar as respostas parciais."
 
 ---
 
-🏷️ Uso de Tags XML para Saídas Estruturadas
+👥 **Diretrizes de Adaptação ao Público-Alvo (`Audience Awareness`)**
 
-- O uso de tags XML (ex: `<resumo_caso>`, `<partes_envolvidas>`, `<decisao_principal`) é crucial para gerar outputs que podem ser facilmente parseados e utilizados em outros sistemas ou para análises programáticas.
-- Ao definir o `Output Format`, instrua a IA a envolver seções distintas da resposta em tags XML descritivas e consistentes.
-- Exemplo: Em vez de apenas pedir uma lista, solicite: 'Apresente os argumentos do autor e do réu em tags XML separadas: <argumentos_autor>...</argumentos_autor> e <argumentos_reu>...</argumentos_reu>'.
-- Consulte os templates em `4- Templates e Exemplos.md` para ver exemplos de como as tags XML são integradas nas estruturas de saída.
-- Benefícios: Maior clareza, facilidade de integração com outras ferramentas, e melhor organização da informação complexa.
+A estrutura e o conteúdo do prompt devem ser adaptados ao público jurídico pretendido, influenciando o tipo de informação solicitada e o formato da resposta esperada.
 
----
-
-🪓 Chunking e Meta-Sumarização de Documentos Extensos
-
-- Documentos jurídicos podem ser extremamente longos (e.g., petições extensas, processos completos, grandes contratos). Quando um documento excede a janela de contexto da IA, a análise completa pode falhar ou ser incompleta.
-- Ao lidar com **documentos de entrada muito extensos** (ex: >20k tokens), além de posicionar o texto principal no início, considere a técnica de meta-sumarização.
-- **Técnica de Meta-Sumarização (Anthropic):**
-    - 1. **Dividir (Chunking):** Quebre o documento longo em partes menores e manejáveis (chunks). A divisão pode ser por seções, capítulos, número de páginas/parágrafos, ou usando ferramentas de text splitting.
-    - 2. **Sumarizar Chunks Individualmente:** Aplique um prompt de sumarização ou análise a cada chunk, focando na extração dos pontos mais relevantes conforme a tarefa.
-    - 3. **Sumarizar os Resumos (Meta-Sumarização):** Combine os resumos dos chunks e, em seguida, peça à IA para criar um resumo final ou uma análise consolidada a partir desses resumos parciais.
-- Ao gerar um prompt para analisar um documento potencialmente longo, considere incluir instruções ou sugestões para o usuário final sobre como aplicar essa técnica.
-- Exemplo de instrução a ser incluída no prompt gerado: 'Se este documento for muito extenso para análise direta, divida-o em seções lógicas, analise cada seção com este prompt, e depois compile as análises parciais.'
-- Referência: A seção 'Perform meta-summarization to summarize long documents' do guia da Anthropic sobre sumarização legal.
-
+*   **Advogado Sênior/Especialista:** Prompts podem focar em análise complexa, nuances estratégicas e exigir respostas altamente precisas e técnicas.
+*   **Advogado Júnior:** Prompts podem incluir mais estrutura (sugerindo o uso de templates de `4- Templates_e_Exemplos.md`), com foco em pesquisa e elaboração de rascunhos.
+*   **Paralegal:** Prompts devem ser diretos para extração de dados, organização de informações e acompanhamento de procedimentos.
+*   **Juiz/Árbitro:** Prompts devem visar resumos objetivos de argumentos, identificação clara de questões controversas e análise imparcial.
+*   **Estudante de Direito:** Prompts podem ser formulados para explicar conceitos, aplicar estruturas didáticas (ex: FIRAC, IRAC) e facilitar o aprendizado.
+*   **Cliente/Leigo:** Prompts devem solicitar linguagem simples e foco no essencial. **Atenção redobrada ao risco de UPL** (Prática Não Autorizada da Lei) ao gerar prompts que resultarão em respostas para este público; inclua disclaimers apropriados conforme `1- System Prompt.md`.
 
 ---
 
-🧠 Clareza e Precisão (`Clarity & Precision`)
+🎓 **Formatação ao Usar Exemplos (`Examples & Shots`)**
 
-- Evite comandos vagos (ex: "analise" sozinho não é suficiente; prefira "analise os riscos legais de X").
-- **EXIJA extrema precisão terminológica.** Defina termos legais chave se houver risco de ambiguidade ou instrua a `AI` (no prompt gerado) a solicitar esclarecimentos, se necessário.
-- **Especifique a Jurisdição (`Jurisdiction`) aplicável** sempre que a tarefa depender de leis ou procedimentos locais.
-- Use **`MAIÚSCULAS`** ou **`**negrito**`** para destacar instruções CRÍTICAS ou termos chave (ex: `LEIA TODOS OS DOCUMENTOS`, `Jurisdição: BRASIL`, `FOQUE APENAS na cláusula de responsabilidade`).
-- **Instruções de Aterramento:** Sempre que o prompt gerado envolver análise factual ou interpretação de documentos, **inclua instruções explícitas para a IA final** citar fontes específicas (documento/seção/página), indicar incertezas ("Se a informação não estiver clara ou disponível no documento, declare isso explicitamente.") e basear-se estritamente nas informações fornecidas.
+Quando a técnica de `Few-Shot Learning` (conforme `1- System Prompt.md`) for utilizada, ou quando se referir a exemplos complexos:
 
----
+*   **Clareza na Apresentação de Exemplos (Few-Shot):**
+    *   Se incorporar exemplos de entrada/saída diretamente no prompt, use delimitadores claros para separar cada exemplo e para distinguir entre a "entrada de exemplo" e a "saída de exemplo".
+    *   *Exemplo de formatação:*
+        ```
+        <exemplo_1>
+          <entrada_exemplo>Texto da pergunta exemplo 1...</entrada_exemplo>
+          <saida_exemplo>Texto da resposta exemplo 1...</saida_exemplo>
+        </exemplo_1>
+        <exemplo_2>
+          <entrada_exemplo>Texto da pergunta exemplo 2...</entrada_exemplo>
+          <saida_exemplo>Texto da resposta exemplo 2...</saida_exemplo>
+        </exemplo_2>
+        ```
 
-👥 Consideração do Público (`Audience Awareness`)
-
-- Adapte a linguagem, profundidade e foco do `prompt` (e do `output` solicitado) ao público jurídico pretendido:
-    - **Advogado Sênior/Especialista:** Foco em precisão, análise complexa, opções estratégicas.
-    - **Advogado Júnior:** Oferecer mais estrutura (`templates`), foco em pesquisa, rascunhos iniciais.
-    - **Paralegal:** Foco em extração de dados, organização, procedimentos.
-    - **Juiz/Árbitro:** Foco em resumo de argumentos, identificação de questões, objetividade.
-    - **Estudante de Direito:** Foco em explicação de conceitos, estrutura (IRAC/FIRAC), didática.
-    - **Cliente/Leigo:** Linguagem simples, foco no essencial, **sempre com alerta interno sobre risco de `UPL` ao gerar o prompt**.
-
----
-
-🎓 Exemplos (Shots e Estrutura) (`Examples (Shots & Structure)`)
-
-- Recomende o uso de `few-shot learning` (fornecendo 1-3 exemplos de entrada/saída) quando precisar que a `AI` siga um padrão muito específico de classification ou formatação não coberto por instruções diretas ou templates existentes.
-- Para formatos de `output` jurídico complexos (FIRAC, Ementa), garanta que os `Templates` (`3- Templates de Prompt.md`) forneçam um **exemplo estruturado completo** ou um modelo claro para guiar a `AI`.
+*   **Referência a Exemplos Estruturados (Templates):**
+    *   Para formatos de saída jurídica complexos (ex: FIRAC, Ementa CNJ), em vez de replicar longos exemplos no prompt, refira-se aos modelos e exemplos completos disponíveis em `4- Templates_e_Exemplos.md`.
+    *   *Exemplo de instrução:* "Siga o formato de Ementa CNJ demonstrado no Exemplo X do arquivo `4- Templates_e_Exemplos.md`."
 
 ---
 
-📋 Notas Gerais (`General Notes`)
+📋 **Princípios Gerais de Formatação de Prompt**
 
 - Sempre alinhe o design do `prompt` (instruções, estrutura, `role`) com o `output` desejado.
 - Certifique-se de que `[STYLE] Tag` (se usada) + `Tone` + `Structure` + `Scope` + `Audience` estejam alinhados e consistentes dentro do mesmo `prompt`.
@@ -104,16 +114,15 @@ Estas diretrizes garantem clareza, consistencia e estrutura apropriada ao public
 
 ---
 
-🔄 Adaptação para Diferentes Modelos de IA (Claude, ChatGPT, Gemini)
+🔄 **Considerações de Formatação entre Modelos de IA**
 
-- Diferentes modelos de IA (ex: Claude, ChatGPT, Gemini) podem ter nuances em como interpretam instruções, o tamanho de suas janelas de contexto, e a verbosidade de suas respostas.
-- **Recomendações Gerais:**
-    - **Estrutura Clara:** Manter uma estrutura de prompt clara com delimitadores (XML, Markdown) e componentes bem definidos (Tarefa, Contexto, Formato de Saída) é benéfico para todos os modelos.
-    - **Testes de Verbosidade:** Alguns modelos podem ser mais verbosos por padrão. Se a concisão for crucial, especifique-a claramente (ex: 'Seja conciso', 'Responda em N pontos').
-    - **Estilo de Instrução:** Teste se instruções muito prescritivas ou mais abertas funcionam melhor para o modelo específico e a tarefa.
-    - **Janela de Contexto:** Esteja ciente das limitações de contexto de cada modelo ao lidar com documentos longos e aplique técnicas de chunking/meta-sumarização conforme necessário.
-    - **Iteração:** Esteja preparado para iterar e refinar prompts, pois o que funciona perfeitamente em um modelo pode precisar de ajustes em outro.
-- O foco deste Engenheiro de Prompts é em princípios de engenharia de prompt que são amplamente aplicáveis, mas testes específicos para o modelo de IA alvo são sempre recomendados.
+Embora os princípios de formatação deste guia sejam amplamente aplicáveis, diferentes modelos de IA (ex: Claude, ChatGPT, Gemini) podem ter nuances. Considere o seguinte ao adaptar prompts:
+
+*   **Verbosidade da Resposta:** Modelos variam na verbosidade padrão. Se a concisão for um requisito crítico do formato de saída, instrua explicitamente no prompt (ex: 'Seja conciso e direto.', 'Limite a resposta a N pontos principais.').
+*   **Sensibilidade a Instruções:** Alguns modelos podem responder melhor a instruções de formatação extremamente detalhadas, enquanto outros podem performar bem com diretrizes mais gerais. Testes podem revelar a necessidade de ajustar a granularidade das instruções de formatação.
+*   **Consistência de Delimitadores:** Embora XML e Markdown sejam robustos, verifique se o modelo escolhido tem alguma preferência ou peculiaridade no processamento de delimitadores específicos, especialmente em prompts muito longos ou complexos.
+
+Testes específicos para o modelo de IA alvo são sempre uma boa prática para otimizar a eficácia das preferências de formatação.
 
 ---
-# Atualizado em: 03/05/25
+# Atualizado em: 24/07/24
