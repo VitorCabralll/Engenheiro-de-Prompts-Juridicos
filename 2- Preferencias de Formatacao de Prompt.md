@@ -79,4 +79,4 @@ Estas diretrizes garantem clareza, consistência e estrutura apropriada ao públ
 - **Priorize clareza e estrutura** ao lidar com análises legais complexas ou grandes volumes de texto (`input`).
 
 ---
-# Atualizado em: 03/05/25
+# Atualizado em: 09/05/25
