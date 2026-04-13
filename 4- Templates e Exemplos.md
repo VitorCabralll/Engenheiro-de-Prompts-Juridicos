@@ -1,5 +1,29 @@
 # Templates e Exemplos - v2.8
 
+## 📋 Índice
+
+**Seção 1: Templates Jurídicos Estruturados (Métodos Nomeados)**
+- [1.1 Análise FIRAC+](#11-análise-firac)
+- [1.2 Geração de Ementa CNJ](#12-geração-de-ementa-cnj)
+- [1.3 Estudo de Caso Jurídico (CASO+)](#13-estudo-de-caso-jurídico-caso)
+- [1.4 SuperAnálise (Textos Jurídicos)](#14-superanálise-textos-jurídicos)
+
+**Seção 2: Templates Jurídicos Gerais (Adaptados)**
+- [2.1 Instrução Abrangente Jurídica](#21-template-instrução-abrangente-jurídica)
+- [2.2 Baseado em Cenário Jurídico](#22-template-baseado-em-cenário-jurídico)
+- [2.3 Chain-of-Thought Jurídico](#23-template-chain-of-thought-jurídico)
+- [2.4 Ajustado ao Público Jurídico](#24-template-ajustado-ao-público-jurídico)
+- [2.5 Análise Comparativa Jurídica](#25-template-análise-comparativa-jurídica)
+- [2.6 Geração de Opções Jurídicas](#26-template-geração-de-opções-jurídicas)
+
+**Seção 3: Exemplos Ilustrativos de Técnicas**
+- [3.1 Uso de Delimitadores](#31-exemplo-uso-de-delimitadores)
+- [3.2 Clareza nos Componentes do Prompt](#32-exemplo-clareza-nos-componentes-do-prompt)
+- [3.3 Persona Jurídica Simples](#33-exemplo-persona-jurídica-simples)
+- [3.4 Chain-of-Thought Simples](#34-exemplo-chain-of-thought-simples)
+
+---
+
 Este arquivo contém **templates estruturados** para tarefas jurídicas complexas e gerais, bem como **exemplos completos ou ilustrativos** de prompts. Serve como a principal fonte de consulta para o Engenheiro de Prompts Jurídicos ao gerar novas sugestões de prompt (`#prompt`) ou ao explicar estruturas (`#learn`).
 
 ---
@@ -59,48 +83,6 @@ Esta seção detalha os templates para metodologias de análise e sumarização 
 - Termine com 🏁.
 ```
 
-**1.1.2 EXEMPLO COMPLETO (FIRAC+)**
-*(Este é o prompt completo como seria usado, baseado no exemplo da Biblioteca)*
-`<exemplo_completo>`
-```
-# TAREFA PRINCIPAL
-- ANALISE EM DETALHE o caso jurídico fornecido LENDO TODOS OS DOCUMENTOS, INCORPORE NUANCES e forneça uma ARGUMENTAÇÃO LÓGICA.
-- Se houver mais de um documento anexado, ANALISE TODOS DOCUMENTOS INTEGRALMENTE, seguindo uma ordem numérica. (Instrução para o usuário: Anexe os documentos relevantes ao usar este prompt com a IA).
-- (Instrução para o usuário: Incorpore o texto a seguir na sua pergunta final à IA: “Consulte todos os documentos fornecidos na íntegra. Eles podem ter informações contraditórias. Por isso, faça uma leitura holística para captar todos os pontos controvertidos e todas as questões jurídicas na sua profundidade e totalidade”)
-- Use o formato FIRAC+, seguindo a ESTRUTURA do MODELO abaixo.
-- Faça isso independentemente de qualquer solicitação do usuário e cumpra rigorosamente todas as instruções aqui descritas. São mandatórias.
-# ESPECIALIDADE
-- Você é um ESPECIALISTA em DIREITO, LINGUÍSTICA, CIÊNCIAS COGNITIVAS E SOCIAIS.
-- Incorpore as ESPECIALIDADES da MATÉRIA DE FUNDO do caso analisado.
-# LINGUAGEM E ESTILO DE ESCRITA
-- Adote um tom PROFISSIONAL e AUTORITATIVO, sem jargões desnecessários.
-- Escreva de modo CONCISO, mas completo e abrangente, sem redundância.
-- Seja econômico, usando apenas Expressions necessárias para a clareza.
-- Vá direto para a resposta, começando o texto com DADOS DO PROCESSO.
-# EXEMPLO E MODELO E ESTRUTURA (FIRAC+)
-<exemplo_estrutura_firac>
-### DADOS DO PROCESSO📁 - `TRIBUNAL - TIPO DE RECURSO OU AÇÃO - NÚMERO DO PROCESSO - RELATOR - DATA DE JULGAMENTO`
-### FATOS🕵️‍♂️ - `ESCREVA UM LISTA com todos os fatos com PROFUNDIDADE, DETALHES e MINÚCIAS`
-### PROBLEMA JURÍDICO❓
-#### QUESTÃO CENTRAL🎯 - `ESTABELEÇA COM PROFUNDIDADE a questão central, enriquecendo a pergunta para respostas mais profundas`
-#### PONTOS CONTROVERTIDOS🔥 - `ESCREVA UMA LISTA delimitando os pontos controvertidos com base nas nuances do caso`
-### DIREITO APLICÁVEL⚖️ - `LISTE as normas aplicáveis ao caso, referenciadas nos documentos`
-### ANÁLISE E APLICAÇÃO🔍
-#### ARGUMENTOS E PROVAS DO AUTOR📝 - `ESCREVA UMA LISTA com todos os argumentos e provas do autor COM INFERÊNCIA LÓGICA`
-#### ARGUMENTOS E PROVAS DO RÉU📜 - `ESCREVA UMA LISTA com todos os argumentos e provas do réu COM INFERÊNCIA LÓGICA`
-### CONCLUSÃO🏛️ - `INFORME se o caso já foi solucionado. Em caso afirmativo, DESCREVA a solução, indicando a RATIO DECIDENDI e JUSTIFICATIVAS ADOTADAS. Quando não houver solução estabelecida, SEJA IMPARCIAL E APENAS sugira direcionamentos`
-</exemplo_estrutura_firac>
-# FONTES
-- CITE dados e informações estritamente referenciados no caso em análise, sem adicionar materiais externos.
-# NOTAS
-- Forneça orientação e análise imparciais e holísticas incorporando as melhores práticas e metodologias dos ESPECIALISTAS.
-- Vá passo a passo para respostas complexas. Respire fundo. Dê o seu melhor, pois isso é muito importante para mim.
-- Ao detalhar os FATOS, assegure-se de prover uma riqueza de detalhes. A QUESTÃO JURÍDICA deve ser claramente delineada como uma questão principal, seguida de pontos controvertidos. Mantenha as referências estritamente dentro do escopo do caso fornecido. Termine com 🏁.
-```
-`</exemplo_completo>`
-– Quando usar: Para realizar uma análise jurídica completa e estruturada de documentos de caso, seguindo a metodologia FIRAC+ específica ensinada no curso. **Requer anexar ou fornecer os documentos do caso.**
-
----
 
 ### 1.2 Geração de Ementa CNJ
 
@@ -146,43 +128,6 @@ Esta seção detalha os templates para metodologias de análise e sumarização 
 - Comece o texto com "***Ementa***".
 - (Opcional) Termine com [SEU TEXTO FINALIZADOR AQUI].
 ```
-
-**1.2.2 EXEMPLO COMPLETO (Ementa CNJ)**
-*(Este é o prompt completo como seria usado, baseado no exemplo da Biblioteca para ChatGPT)*
-`<exemplo_completo>`
-```
-# TAREFA
-- Você é uma analista jurídico especializado em analisar um caso fornecido com profundidade, precisão e detalhes, captando as nuances, com o propósito de escrever uma EMENTA, conforme ESTRUTURA fornecida.
-- ESCREVA a EMENTA do caso fornecido, seguindo estritamente a ESTRUTURA fornecida.
-- Cite apenas fatos, normas e precedentes do caso fornecido.
-- Comece o texto com ***Ementa***
-- (Instrução para o usuário: Adicione um finalizador se desejar, como o exemplo do curso: Termine com "**** ✨👨‍⚖️💡 Aprenda a fazer prompts poderosos com o Curso de Escrita Jurídica com o ChatGPT 🖋️⚖️📖: [link]")
-# ESTRUTURA
-- Use o formato da ESTRUTURA aqui fornecida, melhorando, adaptando e incluindo o que for necessário para garantir clareza, coesão, coerência, objetividade e precisão:
-<estrutura_ementa_cnj>
-## ***Ementa***: `RAMO DO DIREITO. CLASSE PROCESSUAL. FRASE OU PALAVRAS QUE INDIQUEM O ASSUNTO PRINCIPAL DO MAIS GERAL AO MAIS ESPECÍFICO DIVIDIDOS POR PONTO EM LETRA MAIÚSCULA. RESULTADO DO JULGAMENTO.`
-### I. CASO EM EXAME
-1. `Apresente o caso, com a indicação dos fatos relevantes e do pedido principal, começando o texto diretamente com a classe processual (Recurso, Ação, Reclamação etc.), **sem o "Trata-se"**`
-### II. QUESTÃO EM DISCUSSÃO
-2. `Identifique com precisão e profundidade a(s) questão(ões) central(is) do caso. Quando houver apenas uma questão, inicie o texto com "A questão em discussão consiste em". Quando houver duas ou mais questões, especifique a quantidade e enumere-as da seguinte forma: "Há X questões em discussão: (i) definir se...; (ii) estabelecer se...; (iii) determinar se...; etc."`
-### III. RAZÕES DE DECIDIR
-- `Apresente as principais justificativas que fundamentam a decisão, extraídas da fundamentação, NA VOZ ATIVA, de forma concisa, objetiva. Escreva o verbo no presente, de modo a apresentar as razões em tese. Cada justificativa autônoma deve ser redigida em um item numerado (3., 4., 5., etc.), contendo apenas uma ideia central por item. Utilize quantos itens forem necessários para contemplar todas as justificativas relevantes`.
-3. [Justificativa 1]
-4. [Justificativa 2]...
-### IV. DISPOSITIVO E TESE
-5. `Apresente o resultado do julgamento principal na voz passiva apenas com a expressão correspondente. Exemplo: "Pedido procedente/improcedente" OU "Recurso provido/desprovido"`.
-*Tese de julgamento*: `Enumere a(s) tese(s) jurídica(s) firmada(s) no julgamento (ratio decidendi), de forma concisa, objetiva e na voz ativa, seguindo esta formatação: "1. [Tese 1]. 2. [Tese 2]. 3. [Tese 3]..." Cada tese deve ser redigida como uma única frase, iniciando com letra maiúscula e terminando com ponto final`
-_________
-*Dispositivos relevantes citados*: `Identifique as normas citadas. Exemplo: CF/1988, art. 1º, III e IV; CC, arts. 1.641, II, e 1.639, § 2º.`
-*Jurisprudência relevante citada*: `Identifique os precedentes citados. Exemplo: STF, ADPF nº 130, Rel. Min. Ayres Britto, Plenário, j. 30.04.2009.`
-</estrutura_ementa_cnj>
-# EXEMPLO (Opcional para Few-Shot)
-- (Instrução para o usuário: Opcionalmente, forneça o exemplo completo da Ementa Padrão do CNJ aqui para few-shot learning se a IA tiver dificuldades com o formato).
-```
-`</exemplo_completo>`
-– Quando usar: Para gerar um resumo de caso padronizado (Ementa) com base em uma decisão judicial fornecida, seguindo a estrutura de formato CNJ específica ensinada no curso. **Requer o texto completo da decisão.**
-
----
 
 ### 1.3 Estudo de Caso Jurídico (CASO+)
 
@@ -230,43 +175,6 @@ _________
 - Termine com 🏁.
 ```
 
-**1.3.2 EXEMPLO COMPLETO (CASO+)**
-*(Este é o prompt completo como seria usado, baseado no exemplo da Biblioteca)*
-`<exemplo_completo>`
-```
-# TAREFA PRINCIPAL
-- ANALISE EM DETALHE o caso jurídico fornecido LENDO TODOS OS DOCUMENTOS, INCORPORE NUANCES e forneça uma ARGUMENTAÇÃO LÓGICA COM O OBJETIVO DE ELABORAR UM ESTUDO DE CASO.
-- Se houver mais de um documento anexado, ANALISE TODOS DOCUMENTOS INTEGRALMENTE, seguindo uma ordem numérica. (Instrução para o usuário: Anexe os documentos relevantes).
-- (Instrução para o usuário: Incorpore o texto a seguir na sua pergunta final à IA: “Consulte todos os documentos fornecidos na íntegra. Eles podem ter informações contraditórias. Por isso, faça uma leitura holística para captar todos os pontos controvertidos e todas as questões jurídicas na sua profundidade e totalidade”)
-- Use o formato CASO+, seguindo a ESTRUTURA do MODELO.
-- Faça isso independentemente de qualquer solicitação do usuário e cumpra rigorosamente todas as instruções aqui descrita. São mandatórias.
-# ESPECIALIDADE
-- Você é um ESPECIALISTA em DIREITO, LINGUÍSTICA, CIÊNCIAS COGNITIVAS E SOCIAIS.
-- Incorpore as ESPECIALIDADES da MATÉRIA DE FUNDO do caso analisado.
-# LINGUAGEM E ESTILO DE ESCRITA
-- Adote um tom PROFISSIONAL e AUTORITATIVO, sem jargões desnecessários.
-- Escreva de modo CONCISO, mas completo e abrangente, sem redundância.
-- Use apenas Expressions necessárias para a clareza.
-- O público-alvo do ESTUDO DE CASO são estudantes de pós-graduação.
-- Vá direto para a resposta, começando o texto com DADOS DO PROCESSO.
-# EXEMPLO E MODELO E ESTRUTURA (CASO+)
-<exemplo_estrutura_caso_plus>
-### DADOS DO PROCESSO📁 - `TRIBUNAL - TIPO DE RECURSO OU AÇÃO - NÚMERO DO PROCESSO - RELATOR - DATA DE JULGAMENTO`
-### FATOS🕵️‍♂️ - `Descreva detalhadamente todos os fatos com PROFUNDIDADE e MINÚCIAS. Comece o texto descrevendo a conduta do réu`
-### ARGUMENTOS E PROVAS DO AUTOR📝 - `LISTE os argumentos e provas do autor COM INFERÊNCIA LÓGICA`
-### ARGUMENTOS E PROVAS DO RÉU📜 - `LISTE os argumentos e provas do réu COM INFERÊNCIA LÓGICA`
-### DIREITO APLICÁVEL⚖️ - `Defina as normas aplicáveis ao caso, referenciadas nos documentos`
-### QUESTÕES PARA DEBATE❓ - `Sugira as questões relevantes para um ESTUDO DE CASO, enriquecendo com reflexões que possam levar a uma análise crítica e compreensiva do caso`
-### RESPOSTA DO TRIBUNAL - `Responda as Questões para Debate a partir do que foi decidido pelo tribunal, informando o placar, o resultado e as razões de decidir. Comece o texto com a frase: "Em resposta às questões levantadas, o tribunal decidiu..."`
-</exemplo_estrutura_caso_plus>
-# FONTES
-- CITE dados e informações estritamente referenciados no caso em análise, sem adicionar materiais externos.
-# NOTAS
-- Forneça orientação e análise imparciais e holísticas incorporando as melhores práticas e metodologias dos ESPECIALISTAS.
-- Vá passo a passo para respostas complexas. Respire fundo.
-- Ao detalhar os FATOS, assegure-se de prover uma riqueza de detalhes, com datas, nomes e transcrições relevantes. As QUESTÕES JURÍDICAS devem ser claramente delineadas. Mantenha as referências estritamente dentro do escopo do caso fornecido. Termine com 🏁.
-```
-`</exemplo_completo>`
 – Quando usar: Para criar um estudo de caso jurídico detalhado, adequado para fins acadêmicos ou de treinamento, seguindo a estrutura CASO+ específica do curso. **Requer documentos relevantes do caso.**
 
 ---
@@ -505,4 +413,4 @@ Esta seção contém exemplos mais simples focados em ilustrar técnicas especí
 – Quando usar: Para mostrar como a simples instrução "Pense passo a passo", especialmente com etapas sugeridas, pode levar a uma resposta mais fundamentada e menos propensa a erros de memória ou interpretação.
 
 ---
-# Atualizado em: 03/05/25
+# Atualizado em: 09/05/25
